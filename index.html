@@ -5,13 +5,35 @@
     <title>Магазин мороженого &laquo;Глейси&raquo;</title>
   </head>
   <body>
+    <input type="radio" id="creme-brulee-rasp" name="switch" checked>
+    <input type="radio" id="special-offer-2" name="switch">
+    <input type="radio" id="special-offer-3" name="switch">
+
     <header class="main-header">
       <nav class="main-navigation">
         <a class="logo">
           <img src="img/logo.svg" width="100" height="50" alt="Логотип магазина мороженого &laquo;Глейси&raquo;">
         </a>
         <ul class="site-navigation">
-          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="catalog.html">Каталог</a>
+            <ul class="catalog-submenu">
+              <li class="catalog-submenu-item">
+                <a href="#">Новинки</a>
+              </li>
+              <li  class="catalog-submenu-item">
+                <a href="#">Сливочное</a>
+              </li>
+              <li  class="catalog-submenu-item">
+                <a href="#">Щербеты</a>
+              </li>
+              <li  class="catalog-submenu-item">
+                <a href="#">Фруктовый лед</a>
+              </li>
+              <li  class="catalog-submenu-item">
+                <a href="#">Мелорин</a>
+              </li>
+            </ul>
+          </li>
           <li><a href="#">Доставка и оплата</a></li>
           <li><a href="#">О Компании</a></li>
         </ul>
@@ -21,10 +43,28 @@
               <h2 class="visually-hidden">Поиск</h2>
               <form class="search-form" action="index.html" method="post">
                 <input class="search-field" type="search" name="search" value="" placeholder="Что ищем?">
+                <input type="submit" name="search" value="">
               </form>
             </section>
           </li>
-          <li class="login-link">Вход</li>
+          <li class="login-link"><a href="#">Вход</a>
+            <section class="popap popap-login">
+              <h2 class="visually-hidden">Вход</h2>
+              <form class="login-form" action="index.html" method="post">
+                <input class="login-email" type="email" name="login" placeholder="Электронная почта">
+                <input class="login-password" type="password" name="password" placeholder="Пароль">
+                <button class="button login-button" type="submit">Войти</button>
+                <ul class="login-list">
+                  <li class="login-item">
+                    <a href="#">Забыли пароль?</a>
+                  </li>
+                  <li class="login-item">
+                    <a href="#">Новая регистрация</a>
+                  </li>
+                </ul>
+              </form>
+            </section>
+          </li>
           <li class="basket">
             Пусто
             <section class="popap popap-basket">
@@ -62,9 +102,7 @@
 
       <section class="slider">
         <h2 class="visually-hidden">Специальные предложения</h2>
-        <input id=creme-brulee-rasp name="switch" type="radio" checked>
-        <input id=special-offer-2 name="switch" type="radio">
-        <input id=special-offer-3 name="switch" type="radio">
+
         <div class="special-offer">
           <label for="creme-brulee-rasp">Крем-брюле и пломбир с малиновым джемом</label>
           <label for="special-offer-2"></label>
@@ -124,7 +162,7 @@
       </section>
 
       <section class="features">
-        <h2>Магазин Глейси &ndash; это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h2>
+        <h2>Магазин Глейси&nbsp;&mdash; это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h2>
         <ul class="features-list">
           <li class="feature-item ice-cream">
             Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.
@@ -206,20 +244,20 @@
       </div>
     </footer>
 
-    <section class="modal modal-login">
-      <h2 class="visually-hidden">Вход</h2>
-      <form class="login-form" action="index.html" method="post">
-        <input class="login-email" type="email" name="login" placeholder="Электронная почта">
-        <input class="login-password" type="password" name="password" placeholder="Пароль">
-        <button class="button login-button" type="submit">Войти</button>
-        <ul class="login-list">
-          <li class="login-item">
-            <a href="#">Забыли пароль?</a>
-          </li>
-          <li class="login-item">
-            <a href="#">Новая регистрация</a>
-          </li>
-        </ul>
+    <section class="modal modal-feedback">
+      <span class="modal-close"><a href="#">&times;</a></span>
+      <h2>Мы обязательно вам ответим!</h2>
+      <form class="login-form" action="#" method="post">
+        <p>
+          <input class="feedback-name" type="text" name="name" placeholder="Как вас зовут?">
+        </p>
+        <p>
+          <input class="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?">
+        </p>
+        <p>
+          <textarea class="feedback-textarea-text" name="textarea-text" rows="8" cols="50" placeholder="Напишите что-нибудь..."></textarea>
+        </p>
+        <button class="button feedback-button" type="submit">Отправить</button>
       </form>
     </section>
   </body>
