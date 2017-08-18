@@ -1,43 +1,43 @@
 body {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 1.375em;
   color: #ffffff;
   font-weight: normal;
-  font-family: "Roboto", "Arial", serif;
+  font-family: "Roboto", "Arial", sans-serif;
   background-color: #849d8f;
 }
 
 .features-heading {
   font-size: 24px;
-  line-height: 30px;
+  line-height: 1.25em;
   color: #323232;
   font-weight: normal;
 }
 
 .article-title {
   font-size: 24px;
-  line-height: 30px;
+  line-height: 1.25em;
   color: #323232;
   font-weight: bold;
 }
 
 .feedback-heading {
   font-size: 24px;
-  line-height: 28px;
+  line-height: 1.167em;
   color: #323232;
   font-weight: normal;
 }
 
 .present-heading {
   font-size: 35px;
-  line-height: 41px;
+  line-height: 1.171em;
   color: #ffffff;
   font-weight: bold;
 }
 
 .item-heading {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 1.375em;
   color: #ffffff;
   font-weight: normal;
 }
