@@ -12,13 +12,13 @@
           <img src="img/svg/logo.svg" width="154" height="64" alt="Логотип магазина мороженого &laquo;Глейси&raquo;">
         </a>
         <ul class="site-navigation">
-          <li class="site-navigation-current"><a href="catalog.html">Каталог</a>
+          <li class="site-navigation-current"><a href="#">Каталог</a>
             <ul class="catalog-submenu">
               <li class="catalog-submenu-item">
                 <a href="#">Новинки</a>
               </li>
               <li  class="catalog-submenu-item">
-                <a href="#">Сливочное</a>
+                <a href="catalog.html">Сливочное</a>
               </li>
               <li  class="catalog-submenu-item">
                 <a href="#">Щербеты</a>
@@ -36,20 +36,25 @@
         </ul>
         <ul class="user-navigation">
           <li class="search">
+            <a class="visually-hidden" href="#">Поиск</a>
             <section class="popap popap-search">
-              <h2 class="visually-hidden">Поиск</h2>
+              <h2 class="visually-hidden">Форма поиска</h2>
               <form class="search-form" action="index.html" method="post">
-                <input class="search-field" type="search" name="search" value="" placeholder="Что ищем?">
-                <input type="submit" name="search" value="">
+                <label class="visually-hidden" for="search-field">Что искать?</label>
+                <input class="search-field" id="search-field" type="search" name="search" value="" placeholder="Что ищем?">
+                <input type="submit" name="search" value="Искать"> <!-- в дальнейшем эту кнопку скроем -->
               </form>
             </section>
           </li>
-          <li class="login-link"><a href="#">Вход</a>
+          <li class="login-link">
+            <a href="#">Вход</a>
             <section class="popap popap-login">
-              <h2 class="visually-hidden">Вход</h2>
+              <h2 class="visually-hidden">Форма входа</h2>
               <form class="login-form" action="index.html" method="post">
-                <input class="login-email" type="email" name="login" placeholder="Электронная почта">
-                <input class="login-password" type="password" name="password" placeholder="Пароль">
+                <label class="visually-hidden" for="login-email">Электронная почта</label>
+                <input class="login-email" id="login-email" type="email" name="login" placeholder="Электронная почта">
+                <label class="visually-hidden" for="login-password">Пароль</label>
+                <input class="login-password" id="login-password" type="password" name="password" placeholder="Пароль">
                 <button class="button login-button" type="submit">Войти</button>
                 <ul class="login-list">
                   <li class="login-item">
@@ -63,19 +68,19 @@
             </section>
           </li>
           <li class="basket not-empty">
-            2 товара
+            <a href="#">2 товара</a>
             <section class="popap popap-basket">
               <h2 class="visually-hidden">Корзина</h2>
               <table class="basket-table">
                 <tr class="basket-table-item">
-                  <td><a href="#">&times;</a></td>
+                  <td><button class="modal-close" type="button">Отменить</button></td>
                   <td><img src="img/creamy-orange-little.jpg" width="33" height="33" alt="Пломбир с апельсиновым джемом"></td>
                   <td>Пломбир с апельсиновым джемом</td>
                   <td>1,5 кг &times; <span>200 руб.</span></td>
                   <td>300 руб.</td>
                 </tr>
                 <tr class="basket-table-item">
-                  <td><a href="#">&times;</a></td>
+                  <td><button class="modal-close" type="button">Отменить</button></td>
                   <td><img src="img/creamy-straw-little.jpg" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
                   <td>Клубничный пломбир с присыпкой из белого шоколада</td>
                   <td>1,5 кг &times; <span>300 руб.</span></td>
@@ -258,6 +263,7 @@
 
       <footer class="main-footer">
         <div class="footer-social">
+          <h3 class="visually-hidden">Магазин Глейси в социальных сетях</h3>
           <ul>
             <li><a class="social-button social-button-tw" href="#">Твиттер</a></li>
             <li><a class="social-button social-button-ig" href="#">Инстаграм</a></li>
@@ -266,6 +272,7 @@
           </ul>
         </div>
         <div class="footer-info">
+          <h3 class="visually-hidden">Информация</h3>
           <ul class="footer-info-list">
             <li class="footer-info-item"><a href="#">Для поставщиков</a></li>
             <li class="footer-info-item"><a href="#">О производстве</a></li>

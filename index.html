@@ -16,13 +16,13 @@
           <img src="img/svg/logo.svg" width="154" height="64" alt="Логотип магазина мороженого &laquo;Глейси&raquo;">
         </a>
         <ul class="site-navigation">
-          <li><a href="catalog.html">Каталог</a>
+          <li><a href="#">Каталог</a>
             <ul class="catalog-submenu">
               <li class="catalog-submenu-item">
                 <a href="#">Новинки</a>
               </li>
               <li  class="catalog-submenu-item">
-                <a href="#">Сливочное</a>
+                <a href="catalog.html">Сливочное</a>
               </li>
               <li  class="catalog-submenu-item">
                 <a href="#">Щербеты</a>
@@ -40,20 +40,25 @@
         </ul>
         <ul class="user-navigation">
           <li class="search">
+            <a class="visually-hidden" href="#">Поиск</a>
             <section class="popap popap-search">
-              <h2 class="visually-hidden">Поиск</h2>
+              <h2 class="visually-hidden">Форма поиска</h2>
               <form class="search-form" action="index.html" method="post">
-                <input class="search-field" type="search" name="search" value="" placeholder="Что ищем?">
-                <input type="submit" name="search" value="">
+                <label class="visually-hidden" for="search-field">Что искать?</label>
+                <input class="search-field" id="search-field" type="search" name="search" value="" placeholder="Что ищем?">
+                <input type="submit" name="search" value="Искать"> <!-- в дальнейшем эту кнопку скроем -->
               </form>
             </section>
           </li>
-          <li class="login-link"><a href="#">Вход</a>
+          <li class="login-link">
+            <a href="#">Вход</a>
             <section class="popap popap-login">
-              <h2 class="visually-hidden">Вход</h2>
+              <h2 class="visually-hidden">Форма входа</h2>
               <form class="login-form" action="index.html" method="post">
-                <input class="login-email" type="email" name="login" placeholder="Электронная почта">
-                <input class="login-password" type="password" name="password" placeholder="Пароль">
+                <label class="visually-hidden" for="login-email">Электронная почта</label>
+                <input class="login-email" id="login-email" type="email" name="login" placeholder="Электронная почта">
+                <label class="visually-hidden" for="login-password">Пароль</label>
+                <input class="login-password" id="login-password" type="password" name="password" placeholder="Пароль">
                 <button class="button login-button" type="submit">Войти</button>
                 <ul class="login-list">
                   <li class="login-item">
@@ -67,19 +72,19 @@
             </section>
           </li>
           <li class="basket">
-            Пусто
+            <a href="#">Пусто</a>
             <section class="popap popap-basket">
               <h2 class="visually-hidden">Корзина</h2>
               <table class="basket-table">
                 <tr class="basket-table-item">
-                  <td><a href="#">&times;</a></td>
+                  <td><button class="modal-close" type="button">Отменить</button></td>
                   <td><img src="img/creamy-orange-little.jpg" width="33" height="33" alt="Пломбир с апельсиновым джемом"></td>
                   <td>Пломбир с апельсиновым джемом</td>
                   <td>1,5 кг &times; <span>200 руб.</span></td>
                   <td>300 руб.</td>
                 </tr>
                 <tr class="basket-table-item">
-                  <td><a href="#">&times;</a></td>
+                  <td><button class="modal-close" type="button">Отменить</button></td>
                   <td><img src="img/creamy-straw-little.jpg" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
                   <td>Клубничный пломбир с присыпкой из белого шоколада</td>
                   <td>1,5 кг &times; <span>300 руб.</span></td>
@@ -181,17 +186,19 @@
       </section>
 
       <article class="new-post half-page">
+        <h2 class="visually-hidden">Блог</h2>
         <p>Новое в нашем блоге</p>
-        <h2 class="article-title">
+        <h3 class="article-title">
           <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
-        </h2>
+        </h3>
       </article>
 
       <section class="subscription half-page">
         <h2 class="visually-hidden">Подписка на рассылку</h2>
         <p class="subscription-info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе самого вкусного, что у нас происходит. Обещаем не слать всякой ненужной ерунды. Честно =)</p>
         <form class="subscription-form" action="index.html" method="post">
-          <input type="email" name="email" value="" placeholder="Электронная почта">
+          <label class="visually-hidden" for="subscription-email">Электронная почта</label>
+          <input class="subscription-email" id="subscription-email" type="email" name="email" placeholder="Электронная почта">
           <button class="button subscription-button" type="submit">Отправить</button>
         </form>
       </section>
@@ -220,6 +227,7 @@
 
     <footer class="main-footer">
       <div class="footer-social">
+        <h3 class="visually-hidden">Магазин Глейси в социальных сетях</h3>
         <ul>
           <li><a class="social-button social-button-tw" href="#">Твиттер</a></li>
           <li><a class="social-button social-button-ig" href="#">Инстаграм</a></li>
@@ -228,6 +236,7 @@
         </ul>
       </div>
       <div class="footer-info">
+        <h3 class="visually-hidden">Информация</h3>
         <ul class="footer-info-list">
           <li class="footer-info-item"><a href="#">Для поставщиков</a></li>
           <li class="footer-info-item"><a href="#">О производстве</a></li>
@@ -246,17 +255,20 @@
     </footer>
 
     <section class="modal modal-feedback">
-      <a class="modal-close" href="#">&times;</a>
+      <button class="modal-close" type="button">Закрыть</button>
       <h2 class="feedback-heading">Мы обязательно вам ответим!</h2>
-      <form class="feedback-form" action="#" method="post">
+      <form class="feedback-form" action="index.html" method="post">
         <p>
-          <input class="feedback-name" type="text" name="name" placeholder="Как вас зовут?">
+          <label class="visually-hidden" for="feedback-name">Имя</label>
+          <input class="feedback-name" id="feedback-name" type="text" name="name" placeholder="Как вас зовут?">
         </p>
         <p>
-          <input class="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?">
+          <label class="visually-hidden" for="feedback-email">Электронная почта</label>
+          <input class="feedback-email" id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?">
         </p>
         <p>
-          <textarea class="feedback-textarea-text" name="textarea-text" rows="8" cols="50" placeholder="Напишите что-нибудь..."></textarea>
+          <label class="visually-hidden" for="feedback-textarea-text">Написать дополнительную информацию</label>
+          <textarea class="feedback-textarea-text" id="feedback-textarea-text" name="textarea-text" rows="8" cols="50" placeholder="Напишите что-нибудь..."></textarea>
         </p>
         <button class="button feedback-button" type="submit">Отправить</button>
       </form>
