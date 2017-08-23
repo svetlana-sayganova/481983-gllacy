@@ -1,45 +1,702 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto.woff"),
+       url("../fonts/roboto.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/robotomedium.woff"),
+       url("../fonts/robotomedium.woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/robotobold.woff"),
+       url("../fonts/robotobold.woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.375em;
-  color: #ffffff;
   font-weight: normal;
-  font-family: "Roboto", "Arial", sans-serif;
+  color: #ffffff;
+
   background-color: #849d8f;
+}
+
+.wrapper {
+  background-image: url(../img/special-offer-1.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*  Кнопки  */
+.button {
+  font: inherit;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.222em;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: #ed5a3c; /* временный цвет, в дальнейшем будет градиент */
+  box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
+  border: none;
+}
+
+.special-offer-button {
+  font-size: 32px;
+  font-weight: 44px;
+  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
+
+  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
+}
+
+.button:hover,
+.button:focus {
+  background-color: #f17b64;
+
+  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
+}
+
+.special-offer-button:hover,
+.special-offer-button:focus {
+  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
+}
+
+.button:active {
+  background-color: #ed5a3c;
+  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+}
+
+.special-offer-button:active {
+  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+}
+
+/*  Навигация по сайту  */
+.site-navigation > li > a {
+  font-size: 16px;
+  line-height: 1.125em;
+  font-weight: bold;
+  color: #ffffff;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/*  Навигация пользователя  */
+.user-navigation > li > a {
+  font-size: 14px;
+  line-height: 1.143em;
+  font-weight: 500;
+  color: #ffffff;
+
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*  Подменю КАТАЛОГ  */
+.catalog-submenu a {
+  font-size: 14px;
+  line-height: 1.143em;
+  font-weight: normal;
+  color: #323232;
+
+  background-color: #f8f7f4;
+}
+
+.catalog-submenu li:first-child a {
+  font-weight: bold;
+}
+
+.site-navigation,
+.user-navigation,
+.catalog-submenu {
+  list-style: none;
+}
+
+/*  Поведение при наведении и нажатии  */
+.site-navigation > li > a:hover,
+.site-navigation > li > a:focus {
+  color: #333333;
+
+  background-color: #f7f6f3;
+}
+
+.user-navigation > li > a:hover,
+.user-navigation > li > a:focus {
+  color: #333333;
+
+  background-color: #f8f7f4;
+}
+
+.site-navigation > li > a:active {
+  background-color: #ededed;
+  box-shadow: inset 0px 2px 1px 0px #696969;
+}
+
+.catalog-submenu a:hover,
+.catalog-submenu a:focus {
+  background-color: #fbded7;
+}
+
+.catalog-submenu a:active {
+  background-color: #f6b5a5;
+}
+
+/*  Нахождение на текущей странице  */
+.site-navigation li.site-navigation-current > a {
+  color: #ffffff;
+
+  background-color: #d07058;
+}
+
+.catalog-submenu .catalog-submenu-item-current a {
+  color: #ffffff;
+
+  background-color: #d07058;
+}
+
+/*  Контакты  */
+.header-contacts {
+  font-size: 14px;
+  line-height: 1.143em;
+  font-weight: bold;
+}
+
+.header-contacts span {
+  font-size: 22px;
+  line-height: 1.091em;
+  font-weight: bold;
+}
+
+/*  Специальные предложения  */
+.special-offer {
+  font: inherit;
+  text-align: center;
+}
+
+.special-offer label {
+  font-size: 60px;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+/*  Подарки  */
+.presents {
+  font: inherit;
+  font-weight: bold;
+}
+
+.present {
+  width: 560px;
+  height: 229px;
+
+  border-radius: 15px;
+}
+
+.present-heading {
+  font-size: 35px;
+  line-height: 1.171em;
+}
+
+.present-rasp {
+  background-color: #5e0f1f;
+  background-image: url("../img/bg-raspberry.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.present-chocolate {
+  background-color: #3e2519;
+  background-image: url("../img/bg-chocolate.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+/*  Хиты и каталог  */
+.item:hover {
+  background-color: rgba(248, 247, 244, 0.2);
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.item img {
+  border-radius: 50%;
+}
+
+.item h3 {
+  display: inline; /* иначе подчеркивание на всю ширину страницы */
+
+  font: inherit;
+  font-weight: 500;
+  color: #ffffff;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.item h3:hover,
+.item h3:focus {
+  color: #ffbc9e;
+
+  border-bottom: 1px solid rgba(249, 172, 159, 0.3);
+}
+
+.price {
+  font-size: 45px;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.price span {
+  font-size: 30px;
+}
+
+/*  Особенности  */
+.features {
+  width: 1146px;
+  height: 306px;
+
+  font: inherit;
+  color: #323232;
+
+  background-color: #ede0c4;
+  background-image: url("../img/bg-waffle.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+  border-radius: 15px;
 }
 
 .features-heading {
   font-size: 24px;
   line-height: 1.25em;
-  color: #323232;
-  font-weight: normal;
+  font-weight: 500;
 }
 
-.article-title {
+.features-list {
+  list-style: none;
+}
+
+/*  Блог  */
+.new-post {
+  width: 560px;
+  height: 220px;
+
+  font: inherit;
+  color: #323232;
+
+  background-color: #ffffff;
+  background-image: url("../img/strawberry-background.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+.new-post p {
+  font-weight: 500;
+}
+
+.article-title a {
+  color: #323232;
   font-size: 24px;
   line-height: 1.25em;
-  color: #323232;
   font-weight: bold;
+  text-decoration: underline;
+}
+
+/*  Подписка  */
+.subscription {
+  width: 560px;
+  height: 220px;
+
+  background-color: #f8f7f4;
+  background-image: url("../img/bg-subscription.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+.subscription p {
+  font: inherit;
+  color: #5a5a5a;
+}
+
+.subscription input { /*как стилизовать PLACEHOLDER?*/
+  font: inherit;
+  line-height: 1.5em;
+  font-weight: bold;
+  color: #323232;
+
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+
+.subscription input:hover {
+  border: 2px solid #9a9a9a;
+}
+
+.subscription input:focus {
+  border: 2px solid #2e88e4;
+}
+
+/*  Контакты  */
+.contacts {
+  width: 302px;
+  height: 305px;
+
+  font-size: 14px;
+  line-height: 1.429em;
+  color: #323232;
+
+  background-color: #fefefe;
+  background-image: url("../img/bg-contacts.png");
+  background-position: 0 0;
+  background-repeat: repeat;
+  border-radius: 15px;
+}
+
+.contacts b {
+  display: block; /* для переноса на следующую строку */
+
+  font-size: 18px;
+  line-height: 1.333em;
+  font-weight: bold;
+}
+
+/*  Футер  */
+.footer-social ul {
+  list-style: none;
+}
+
+.footer-info {
+  text-align: center;
+}
+
+.footer-info ul {
+  list-style: none;
+}
+
+.footer-info a {
+  font-size: 13px;
+  line-height: 1.385em;
+  color: #ffffff;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-info li:first-of-type a {
+  font-weight: bold;
+}
+
+.footer-info a:hover,
+.footer-info a:focus {
+  color: #ffbc9e;
+
+  border-bottom: 1px solid rgba(249, 172, 159, 0.3);
+}
+
+.footer-copyright {
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.footer-copyright p a {
+  color: #ffffff;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-copyright p a:hover,
+.footer-copyright p a:focus {
+  color: #ffbc9e;
+
+  border-bottom: 1px solid rgba(249, 172, 159, 0.3);
+}
+
+/*  Попапы  */
+.popup {
+  font-size: 13px;
+  color: #323232;
+
+  background-color: #f8f7f4;
+  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.popup input { /*как стилизовать PLACEHOLDER?*/
+  font-size: 14px;
+  line-height: 1.71em;
+  font-weight: bold;
+  color: #323232;
+
+  background-color: #ffffff;
+  border: solid 1px #d3d3d2;
+  border-radius: 5px;
+}
+
+.popup input:hover {
+  border: 2px solid #9a9a9a;
+}
+
+.popup input:focus {
+  border: 2px solid #2e88e4;
+}
+
+/*  Попапы -- форма поиска  */
+.popup-search {
+  width: 341px;
+  height: 84px;
+}
+
+/*  Попапы -- форма входа  */
+.popup-login {
+  width: 277px;
+  height: 214px;
+}
+
+.login-list {
+  list-style: none;
+}
+
+.login-list a {
+  line-height: 1.85em;
+  color: #323232;
+
+  border-bottom: 1px solid rgba(50, 50, 50, 0.3);
+}
+
+.login-list a:hover,
+.login-list a:focus {
+  color: #e84d37;
+
+  border-bottom: 1px solid rgba(232, 77, 55, 0.3);
+}
+
+/*  Попапы -- корзина  */
+.popup-basket {
+  width: 539px;
+  height: 242px;
+
+  line-height: 1.23em;
+}
+
+.popup-basket span {
+  color: #999999;
+}
+
+.popup-basket b {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+.popup-basket img {
+  border-radius: 50%;
+}
+
+/*  Обратная связь  */
+.modal-feedback {
+  width: 478px;
+  height: 443px;
+
+  color: #323232;
+
+  background-color: #fefefe;
+  background-image: url("../img/bg-contacts.png");
+  background-position: 0 0;
+  background-repeat: repeat;
+  border-radius: 10px;
 }
 
 .feedback-heading {
   font-size: 24px;
   line-height: 1.167em;
-  color: #323232;
-  font-weight: normal;
+  font-weight: 500;
 }
 
-.present-heading {
+.modal-feedback input,
+.modal-feedback textarea { /*как стилизовать PLACEHOLDER?*/
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5em;
+  font-weight: bold;
+
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+
+.modal-feedback input:hover,
+.modal-feedback textarea:hover  {
+  border: 2px solid #9a9a9a;
+}
+
+.modal-feedback input:focus,
+.modal-feedback textarea:focus {
+  border: 2px solid #2e88e4;
+}
+
+/*  Страница каталога  */
+
+/*  Хлебные крошки  */
+.breadcrumbs {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.385em;
+  color: #ffffff;
+}
+
+.breadcrumbs a {
+  color: #ffffff;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.breadcrumbs-current {
+  border-bottom: none;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+  color: #ffbc9e;
+
+  border-bottom: 1px solid rgba(249, 172, 159, 0.3);
+}
+
+.page-title {
   font-size: 35px;
   line-height: 1.171em;
   color: #ffffff;
   font-weight: bold;
 }
 
-.item-heading {
+/*  Фильтры  */
+.filters {
   font-size: 16px;
-  line-height: 1.375em;
+  font-weight: 500;
+  line-height: 1.13em;
+}
+
+.filter fieldset {
+  border: none;
+}
+
+.filter legend {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.14em;
+}
+
+.filter select,
+.filter-price-wrapper,
+.filter-fat-wrapper,
+.filter-filler-wrapper {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter select {
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.13em;
   color: #ffffff;
-  font-weight: normal;
+}
+
+.filter select:hover {
+  color: #323232;
+
+  background-color: #ffffff;
+}
+
+.filter option {
+  font-weight: 500;
+  color: #323232;
+}
+
+.filter-button {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.13em;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  border: solid 2px #ffffff;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+  color: #323232;
+
+  background-color: #ffffff;
+}
+
+.filter-button:active {
+  color: #323232;
+
+  background-color: #ededed;
+  box-shadow: inset 0px 2px 1px 0 #696969;
+}
+
+.pagination-list {
+  list-style: none;
+}
+
+/*  Пагинация  */
+.pagination-item a {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.13em;
+  color: #ffffff;
+}
+
+.pagination-item a:hover,
+.pagination-item a:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.pagination-item a:active {
+  color: #323232;
+
+  background-color: #ffffff;
+}
+
+.pagination-item-current a {
+  color: #323232;
+
+  background-color: #ffffff;
+}
+
+.pagination-item-current a:hover,
+.pagination-item-current a:focus,
+.pagination-item-current a:active {
+  color: #323232;
+
+  background-color: #ffffff;
+}
+
+.pagination-item-prev a {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.pagination-item-next a {
+  color: #ffffff;
 }
 
 .visually-hidden {
