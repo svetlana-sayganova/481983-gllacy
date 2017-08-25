@@ -2,7 +2,7 @@
   font-family: "Roboto";
   src: url("../fonts/roboto.woff"),
        url("../fonts/roboto.woff2");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -18,18 +18,15 @@
   font-family: "Roboto";
   src: url("../fonts/robotobold.woff"),
        url("../fonts/robotobold.woff2");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.375em;
-  font-weight: normal;
+  font-weight: 400;
   color: #ffffff;
 
   background-color: #849d8f;
@@ -46,12 +43,13 @@ a {
 }
 
 /*  Кнопки  */
-.button {
+.button,
+.basket-button {
   font: inherit;
   color: #ffffff;
   font-size: 18px;
   line-height: 1.222em;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   vertical-align: middle;
 
@@ -90,17 +88,21 @@ a {
 }
 
 /*  Навигация по сайту  */
-.site-navigation > li > a {
+.site-navigation a {
   font-size: 16px;
   line-height: 1.125em;
-  font-weight: bold;
+  font-weight: 700;
   color: #ffffff;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /*  Навигация пользователя  */
-.user-navigation > li > a {
+.user-navigation-item > a { /*добавлен новый класс
+   .user-navigation-item, чтобы ссылка ОФОРМИТЬ ЗАКАЗ
+    в корзине сохранила стилизацию кнопки,
+    а также сохранилось особое оформление ссылок внутри поп-апа ВХОД.
+    Есть ли более компактный вариант?*/
   font-size: 14px;
   line-height: 1.143em;
   font-weight: 500;
@@ -113,14 +115,14 @@ a {
 .catalog-submenu a {
   font-size: 14px;
   line-height: 1.143em;
-  font-weight: normal;
+  font-weight: 400;
   color: #323232;
 
   background-color: #f8f7f4;
 }
 
-.catalog-submenu li:first-child a {
-  font-weight: bold;
+.catalog-submenu-item:first-child a {
+  font-weight: 700;
 }
 
 .site-navigation,
@@ -130,21 +132,21 @@ a {
 }
 
 /*  Поведение при наведении и нажатии  */
-.site-navigation > li > a:hover,
-.site-navigation > li > a:focus {
+.site-navigation a:hover,
+.site-navigation a:focus {
   color: #333333;
 
   background-color: #f7f6f3;
 }
 
-.user-navigation > li > a:hover,
-.user-navigation > li > a:focus {
+.user-navigation-item > a:hover,
+.user-navigation-item > a:focus {
   color: #333333;
 
   background-color: #f8f7f4;
 }
 
-.site-navigation > li > a:active {
+.site-navigation a:active {
   background-color: #ededed;
   box-shadow: inset 0px 2px 1px 0px #696969;
 }
@@ -156,16 +158,34 @@ a {
 
 .catalog-submenu a:active {
   background-color: #f6b5a5;
+  box-shadow: none;
 }
 
 /*  Нахождение на текущей странице  */
-.site-navigation li.site-navigation-current > a {
+.site-navigation-current > a {
   color: #ffffff;
 
   background-color: #d07058;
 }
 
-.catalog-submenu .catalog-submenu-item-current a {
+.site-navigation-current > a:hover,
+.site-navigation-current > a:focus,
+.site-navigation-current > a:active {
+  color: #ffffff;
+
+  background-color: #d07058;
+  box-shadow: none;
+}
+
+.catalog-submenu-item-current a {
+  color: #ffffff;
+
+  background-color: #d07058;
+}
+
+.catalog-submenu-item-current a:hover,
+.catalog-submenu-item-current a:focus,
+.catalog-submenu-item-current a:active {
   color: #ffffff;
 
   background-color: #d07058;
@@ -175,36 +195,34 @@ a {
 .header-contacts {
   font-size: 14px;
   line-height: 1.143em;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .header-contacts span {
   font-size: 22px;
   line-height: 1.091em;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 /*  Специальные предложения  */
 .special-offer {
-  font: inherit;
   text-align: center;
 }
 
 .special-offer label {
   font-size: 60px;
   line-height: 1em;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 /*  Подарки  */
 .presents {
-  font: inherit;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .present {
   width: 560px;
-  height: 229px;
+  min-height: 229px;
 
   border-radius: 15px;
 }
@@ -259,7 +277,7 @@ a {
 .price {
   font-size: 45px;
   line-height: 1em;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .price span {
@@ -269,9 +287,8 @@ a {
 /*  Особенности  */
 .features {
   width: 1146px;
-  height: 306px;
+  min-height: 306px;
 
-  font: inherit;
   color: #323232;
 
   background-color: #ede0c4;
@@ -294,9 +311,8 @@ a {
 /*  Блог  */
 .new-post {
   width: 560px;
-  height: 220px;
+  min-height: 220px;
 
-  font: inherit;
   color: #323232;
 
   background-color: #ffffff;
@@ -314,14 +330,14 @@ a {
   color: #323232;
   font-size: 24px;
   line-height: 1.25em;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: underline;
 }
 
 /*  Подписка  */
 .subscription {
   width: 560px;
-  height: 220px;
+  min-height: 220px;
 
   background-color: #f8f7f4;
   background-image: url("../img/bg-subscription.png");
@@ -331,14 +347,13 @@ a {
 }
 
 .subscription p {
-  font: inherit;
   color: #5a5a5a;
 }
 
 .subscription input { /*как стилизовать PLACEHOLDER?*/
   font: inherit;
   line-height: 1.5em;
-  font-weight: bold;
+  font-weight: 700;
   color: #323232;
 
   background-color: #ffffff;
@@ -357,7 +372,7 @@ a {
 /*  Контакты  */
 .contacts {
   width: 302px;
-  height: 305px;
+  min-height: 305px;
 
   font-size: 14px;
   line-height: 1.429em;
@@ -375,7 +390,7 @@ a {
 
   font-size: 18px;
   line-height: 1.333em;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 /*  Футер  */
@@ -399,8 +414,8 @@ a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.footer-info li:first-of-type a {
-  font-weight: bold;
+.footer-info-item:first-of-type a {
+  font-weight: 700;
 }
 
 .footer-info a:hover,
@@ -415,14 +430,14 @@ a {
   line-height: 1.5em;
 }
 
-.footer-copyright p a {
+.footer-copyright a:last-of-type {
   color: #ffffff;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.footer-copyright p a:hover,
-.footer-copyright p a:focus {
+.footer-copyright a:last-of-type:hover, /*вложенность селекторов = 2?*/
+.footer-copyright a:last-of-type:focus {
   color: #ffbc9e;
 
   border-bottom: 1px solid rgba(249, 172, 159, 0.3);
@@ -439,9 +454,10 @@ a {
 }
 
 .popup input { /*как стилизовать PLACEHOLDER?*/
+  font: inherit;
   font-size: 14px;
   line-height: 1.71em;
-  font-weight: bold;
+  font-weight: 700;
   color: #323232;
 
   background-color: #ffffff;
@@ -460,13 +476,13 @@ a {
 /*  Попапы -- форма поиска  */
 .popup-search {
   width: 341px;
-  height: 84px;
+  min-height: 84px;
 }
 
 /*  Попапы -- форма входа  */
 .popup-login {
   width: 277px;
-  height: 214px;
+  min-height: 214px;
 }
 
 .login-list {
@@ -490,7 +506,7 @@ a {
 /*  Попапы -- корзина  */
 .popup-basket {
   width: 539px;
-  height: 242px;
+  min-height: 242px;
 
   line-height: 1.23em;
 }
@@ -501,7 +517,7 @@ a {
 
 .popup-basket b {
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.2em;
 }
 
@@ -512,7 +528,7 @@ a {
 /*  Обратная связь  */
 .modal-feedback {
   width: 478px;
-  height: 443px;
+  min-height: 443px;
 
   color: #323232;
 
@@ -534,7 +550,7 @@ a {
   font: inherit;
   font-size: 16px;
   line-height: 1.5em;
-  font-weight: bold;
+  font-weight: 700;
 
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
@@ -582,7 +598,7 @@ a {
   font-size: 35px;
   line-height: 1.171em;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 /*  Фильтры  */
@@ -709,25 +725,3 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-/* Потренировалась выгружать данные для оформления кнопок из Фотошопа
-
-.button {
-  padding: 10px;
-  border-radius: 32px;
-  background-image: -moz-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  background-image: -ms-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
-  font-size: 30.765px;
-  font-family: "Roboto", "Arial", sans-serif;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  line-height: 1.375;
-  text-align: center;
-  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
-  -moz-transform: matrix( 1.04013375779322,0,0,1.04013375779322,0,0);
-  -webkit-transform: matrix( 1.04013375779322,0,0,1.04013375779322,0,0);
-  -ms-transform: matrix( 1.04013375779322,0,0,1.04013375779322,0,0);
-  text-decoration: none;
-}*/
