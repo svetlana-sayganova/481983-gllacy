@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="wrapper">
-    <input type="radio" id="creme-brulee-rasp" name="switch" checked>
-    <input type="radio" id="special-offer-2" name="switch">
-    <input type="radio" id="special-offer-3" name="switch">
+    <!-- скрываю на время построения сетки -->
 
-    <header class="main-header">
+    <!-- <input type="radio" id="creme-brulee-rasp" name="switch" checked>
+    <input type="radio" id="special-offer-2" name="switch">
+    <input type="radio" id="special-offer-3" name="switch"> -->
+
+    <header class="main-header container">
       <nav class="main-navigation">
         <a class="logo">
           <img src="img/svg/logo.svg" width="154" height="64" alt="Логотип магазина мороженого &laquo;Глейси&raquo;">
         </a>
         <ul class="site-navigation">
-          <li><a href="#">Каталог</a>
-            <ul class="catalog-submenu">
+          <li><a href="catalog.html">Каталог</a>
+            <!-- скрываю на время построения сетки -->
+
+            <!-- <ul class="catalog-submenu">
               <li class="catalog-submenu-item">
                 <a href="#">Новинки</a>
               </li>
@@ -34,7 +38,7 @@
               <li  class="catalog-submenu-item">
                 <a href="#">Мелорин</a>
               </li>
-            </ul>
+            </ul> -->
           </li>
           <li><a href="#">Доставка и оплата</a></li>
           <li><a href="#">О Компании</a></li>
@@ -42,18 +46,20 @@
         <ul class="user-navigation">
           <li class="user-navigation-item search">
             <a class="visually-hidden" href="#">Поиск</a>
-            <section class="popup popup-search">
+            <!-- все popup скрываю на время построения сетки -->
+
+            <!-- <section class="popup popup-search">
               <h2 class="visually-hidden">Форма поиска</h2>
               <form class="search-form" action="index.html" method="post">
                 <label class="visually-hidden" for="search-field">Что искать?</label>
                 <input class="search-field" id="search-field" type="search" name="search" value="" placeholder="Что ищем?">
-                <input type="submit" name="search" value="Искать"> <!-- в дальнейшем эту кнопку скроем -->
+                <input type="submit" name="search" value="Искать">
               </form>
-            </section>
+            </section> -->
           </li>
           <li class="user-navigation-item login-link">
             <a href="#">Вход</a>
-            <section class="popup popup-login">
+            <!-- <section class="popup popup-login">
               <h2 class="visually-hidden">Форма входа</h2>
               <form class="login-form" action="index.html" method="post">
                 <label class="visually-hidden" for="login-email">Электронная почта</label>
@@ -70,11 +76,11 @@
                   </li>
                 </ul>
               </form>
-            </section>
+            </section> -->
           </li>
           <li class="user-navigation-item basket">
             <a href="#">Пусто</a>
-            <section class="popup popup-basket">
+            <!-- <section class="popup popup-basket">
               <h2 class="visually-hidden">Корзина</h2>
               <table class="basket-table">
                 <tr class="basket-table-item">
@@ -95,44 +101,50 @@
               </table>
               <b>Итого: 750 руб.</b>
               <a class="button basket-button" href="#">Оформить заказ</a>
-            </section>
+            </section> -->
           </li>
         </ul>
       </nav>
       <p class="header-contacts">
-        С 10 до 20, ежедневно
+        С 10 до 20, ежедневно<br> <!-- временно -->
         <span>8 812 450-25-25</span>
       </p>
     </header>
 
-    <main class="container">
+    <main>
       <h1 class="visually-hidden">Магазин мороженого &laquo;Глейси&raquo;</h1>
 
-      <section class="slider">
-        <h2 class="visually-hidden">Специальные предложения</h2>
+      <div class="container">
+        <section class="slider">
+          <h2 class="visually-hidden">Специальные предложения</h2>
 
-        <div class="special-offer">
-          <label for="creme-brulee-rasp">Крем-брюле и пломбир<br>
-          с малиновым джемом</label>
-          <label for="special-offer-2"></label>
-          <label for="special-offer-3"></label>
-        </div>
-        <a class="button special-offer-button" href="#">Давайте оба!</a>
-      </section>
+          <div class="special-offer">
+            <label for="creme-brulee-rasp">Крем-брюле и пломбир<br>
+            с малиновым джемом</label>
+            <label for="special-offer-2"></label>
+            <label for="special-offer-3"></label>
+          </div>
+          <div class="choice">
+            <p>кнопки</p>
+            <a class="button special-offer-button" href="#">Давайте оба!</a>
+          </div>
 
-      <section class="presents">
-        <h2 class="visually-hidden">Подарки</h2>
-        <div class="present present-rasp half-page">
-          <h3 class="present-heading">Малинка даром!</h3>
-          <p>При покупке 2 кг любого фруктового мороженого, добавим в Ваш заказ банку малинового варенья бесплатно.</p>
-          <a class="button present-button" href="#">Хочу варенье!</a>
-        </div>
-        <div class="present present-chocolate half-page">
-          <h3 class="present-heading">Шоколадки даром!</h3>
-          <p>При покупке 2 кг пломбира, добавим в Ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-          <a class="button present-button" href="#">Хочу шоколадки!</a>
-        </div>
-      </section>
+        </section>
+
+        <section class="presents half-page-columns">
+          <h2 class="visually-hidden">Подарки</h2>
+          <div class="present present-rasp">
+            <h3 class="present-heading">Малинка даром!</h3>
+            <p>При покупке 2 кг любого фруктового мороженого, добавим в Ваш заказ банку малинового варенья бесплатно.</p>
+            <a class="button present-button" href="#">Хочу варенье!</a>
+          </div>
+          <div class="present present-chocolate">
+            <h3 class="present-heading">Шоколадки даром!</h3>
+            <p>При покупке 2 кг пломбира, добавим в Ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+            <a class="button present-button" href="#">Хочу шоколадки!</a>
+          </div>
+        </section>
+      </div>
 
       <section class="hits">
         <h2 class="visually-hidden">Хиты продаж</h2>
@@ -142,7 +154,10 @@
             310 р<span>/кг</span>
           </p>
           <a href="#">
-            <h3 class="item-heading">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
+            <h3 class="item-heading">
+              Сливочное с апельсиновым<br>
+              джемом и цитрусовой стружкой
+            </h3>
           </a>
           <br> <!-- временно -->
           <a class="button item-button" href="#">Быстрый просмотр</a>
@@ -153,7 +168,10 @@
             380 р<span>/кг</span>
           </p>
           <a href="#">
-            <h3 class="item-heading">Сливочно-кофейное с кусочками шоколада</h3>
+            <h3 class="item-heading">
+              Сливочно-кофейное с кусочками<br>
+              шоколада
+            </h3>
           </a>
           <br>
           <a class="button item-button" href="#">Быстрый просмотр</a>
@@ -164,7 +182,10 @@
             355 р<span>/кг</span>
           </p>
           <a href="#">
-            <h3 class="item-heading">Сливочно-клубничное с присыпкой из белого шоколада</h3>
+            <h3 class="item-heading">
+              Сливочно-клубничное с<br>
+              присыпкой из белого шоколада
+            </h3>
           </a>
           <br>
           <a class="button item-button" href="#">Быстрый просмотр</a>
@@ -175,50 +196,57 @@
             415 р<span>/кг</span>
           </p>
           <a href="#">
-            <h3 class="item-heading">Сливочное крем-брюле с карамельной подливкой</h3>
+            <h3 class="item-heading">
+              Сливочное крем-брюле с<br>
+              карамельной подливкой
+            </h3>
           </a>
           <br>
           <a class="button item-button" href="#">Быстрый просмотр</a>
         </article>
       </section>
 
-      <section class="features">
-        <h2 class="features-heading">Магазин Глейси&nbsp;&mdash; это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h2>
-        <ul class="features-list">
-          <li class="feature-item ice-cream">
-            Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.
-          </li>
-          <li class="feature-item leaf">
-            Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.
-          </li>
-          <li class="feature-item cow">
-            Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.
-          </li>
-          <li class="feature-item thermometer">
-            Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.
-          </li>
-        </ul>
-      </section>
+      <div class="container">
+        <section class="features">
+          <h2 class="features-heading">Магазин Глейси&nbsp;&mdash; это онлайн и офлайн магазин по продаже мороженого собственного производства на развес</h2>
+          <ul class="features-list">
+            <li class="feature-item ice-cream">
+              Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.
+            </li>
+            <li class="feature-item leaf">
+              Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.
+            </li>
+            <li class="feature-item cow">
+              Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.
+            </li>
+            <li class="feature-item thermometer">
+              Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.
+            </li>
+          </ul>
+        </section>
 
-      <article class="new-post half-page">
-        <h2 class="visually-hidden">Блог</h2>
-        <p>Новое в нашем блоге</p>
-        <h3 class="article-title">
-          <a href="#">10 способов сервировки<br>
-            фруктовых щербетов к<br>
-            столу</a>
-        </h3>
-      </article>
+        <div class="half-page-columns">
+          <article class="new-post">
+            <h2 class="visually-hidden">Блог</h2>
+            <p>Новое в нашем блоге</p>
+            <h3 class="article-title">
+              <a href="#">10 способов сервировки<br>
+                фруктовых щербетов к<br>
+                столу</a>
+            </h3>
+          </article>
 
-      <section class="subscription half-page">
-        <h2 class="visually-hidden">Подписка на рассылку</h2>
-        <p class="subscription-info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе самого вкусного, что у нас происходит. Обещаем не слать всякой ненужной ерунды. Честно =)</p>
-        <form class="subscription-form" action="index.html" method="post">
-          <label class="visually-hidden" for="subscription-email">Электронная почта</label>
-          <input class="subscription-email" id="subscription-email" type="email" name="email" placeholder="Электронная почта">
-          <button class="button subscription-button" type="submit">Отправить</button>
-        </form>
-      </section>
+          <section class="subscription">
+            <h2 class="visually-hidden">Подписка на рассылку</h2>
+            <p class="subscription-info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе самого вкусного, что у нас происходит. Обещаем не слать всякой ненужной ерунды. Честно =)</p>
+            <form class="subscription-form" action="index.html" method="post">
+              <label class="visually-hidden" for="subscription-email">Электронная почта</label>
+              <input class="subscription-email" id="subscription-email" type="email" name="email" placeholder="Электронная почта">
+              <button class="button subscription-button" type="submit">Отправить</button>
+            </form>
+          </section>
+        </div>
+      </div>
 
       <section class="location">
         <h2 class="visually-hidden">Расположение</h2>
@@ -227,7 +255,7 @@
         </figure>
       </section>
 
-      <section class="contacts">
+      <!-- <section class="contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <p>
           Адрес главного офиса<br>
@@ -242,9 +270,9 @@
         </p>
         <a class="button contacts-button" href="#">Форма обратной связи</a>
       </section>
-    </main>
+    </main> -->
 
-    <footer class="main-footer">
+    <footer class="main-footer container">
       <div class="footer-social">
         <h3 class="visually-hidden">Магазин Глейси в социальных сетях</h3>
         <ul>
@@ -271,7 +299,7 @@
       </div>
     </footer>
 
-    <section class="modal modal-feedback">
+    <!-- <section class="modal modal-feedback">
       <button class="modal-close" type="button">Закрыть</button>
       <h2 class="feedback-heading">Мы обязательно вам ответим!</h2>
       <form class="feedback-form" action="index.html" method="post">
@@ -289,6 +317,6 @@
         </p>
         <button class="button feedback-button" type="submit">Отправить</button>
       </form>
-    </section>
+    </section> -->
   </body>
 </html>
