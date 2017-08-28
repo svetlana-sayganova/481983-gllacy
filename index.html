@@ -6,112 +6,116 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body class="wrapper">
+  <body>
     <!-- скрываю на время построения сетки -->
 
-    <!-- <input type="radio" id="creme-brulee-rasp" name="switch" checked>
-    <input type="radio" id="special-offer-2" name="switch">
-    <input type="radio" id="special-offer-3" name="switch"> -->
+    <input class="slider-input" type="radio" id="creme-brulee-rasp" name="switch" checked>
+    <input class="slider-input" type="radio" id="special-offer-2" name="switch">
+    <input class="slider-input" type="radio" id="special-offer-3" name="switch">
 
-    <header class="main-header container">
-      <nav class="main-navigation">
-        <a class="logo">
-          <img src="img/svg/logo.svg" width="154" height="64" alt="Логотип магазина мороженого &laquo;Глейси&raquo;">
-        </a>
-        <ul class="site-navigation">
-          <li><a href="catalog.html">Каталог</a>
-            <!-- скрываю на время построения сетки -->
 
-            <!-- <ul class="catalog-submenu">
-              <li class="catalog-submenu-item">
-                <a href="#">Новинки</a>
-              </li>
-              <li class="catalog-submenu-item">
-                <a href="catalog.html">Сливочное</a>
-              </li>
-              <li  class="catalog-submenu-item">
-                <a href="#">Щербеты</a>
-              </li>
-              <li  class="catalog-submenu-item">
-                <a href="#">Фруктовый лед</a>
-              </li>
-              <li  class="catalog-submenu-item">
-                <a href="#">Мелорин</a>
-              </li>
-            </ul> -->
-          </li>
-          <li><a href="#">Доставка и оплата</a></li>
-          <li><a href="#">О Компании</a></li>
-        </ul>
-        <ul class="user-navigation">
-          <li class="user-navigation-item search">
-            <a class="visually-hidden" href="#">Поиск</a>
-            <!-- все popup скрываю на время построения сетки -->
+    <div class="body-wrapper">
+    <div class="wrapper">
+      <header class="main-header container">
+        <nav class="main-navigation">
+          <a class="logo">
+            <img src="img/svg/logo.svg" width="154" height="64" alt="Логотип магазина мороженого &laquo;Глейси&raquo;">
+          </a>
+          <ul class="site-navigation">
+            <li><a href="catalog.html">Каталог</a>
+              <!-- скрываю на время построения сетки -->
 
-            <!-- <section class="popup popup-search">
-              <h2 class="visually-hidden">Форма поиска</h2>
-              <form class="search-form" action="index.html" method="post">
-                <label class="visually-hidden" for="search-field">Что искать?</label>
-                <input class="search-field" id="search-field" type="search" name="search" value="" placeholder="Что ищем?">
-                <input type="submit" name="search" value="Искать">
-              </form>
-            </section> -->
-          </li>
-          <li class="user-navigation-item login-link">
-            <a href="#">Вход</a>
-            <!-- <section class="popup popup-login">
-              <h2 class="visually-hidden">Форма входа</h2>
-              <form class="login-form" action="index.html" method="post">
-                <label class="visually-hidden" for="login-email">Электронная почта</label>
-                <input class="login-email" id="login-email" type="email" name="login" placeholder="Электронная почта">
-                <label class="visually-hidden" for="login-password">Пароль</label>
-                <input class="login-password" id="login-password" type="password" name="password" placeholder="Пароль">
-                <button class="button login-button" type="submit">Войти</button>
-                <ul class="login-list">
-                  <li class="login-item">
-                    <a href="#">Забыли пароль?</a>
-                  </li>
-                  <li class="login-item">
-                    <a href="#">Новая регистрация</a>
-                  </li>
-                </ul>
-              </form>
-            </section> -->
-          </li>
-          <li class="user-navigation-item basket">
-            <a href="#">Пусто</a>
-            <!-- <section class="popup popup-basket">
-              <h2 class="visually-hidden">Корзина</h2>
-              <table class="basket-table">
-                <tr class="basket-table-item">
-                  <td><button class="modal-close" type="button">Отменить</button></td>
-                  <td><img src="img/creamy-orange-little.jpg" width="33" height="33" alt="Пломбир с апельсиновым джемом"></td>
-                  <td>Пломбир с апельсиновым джемом</td>
-                  <td>1,5 кг &times; <span>200 руб.</span></td>
-                  <td>300 руб.</td>
-                </tr>
-                <tr class="basket-table-item">
-                  <td><button class="modal-close" type="button">Отменить</button></td>
-                  <td><img src="img/creamy-straw-little.jpg" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
-                  <td>Клубничный пломбир с присыпкой<br>
-                  из белого шоколада</td>
-                  <td>1,5 кг &times; <span>300 руб.</span></td>
-                  <td>450 руб.</td>
-                </tr>
-              </table>
-              <b>Итого: 750 руб.</b>
-              <a class="button basket-button" href="#">Оформить заказ</a>
-            </section> -->
-          </li>
-        </ul>
-      </nav>
-      <p class="header-contacts">
-        С 10 до 20, ежедневно<br> <!-- временно -->
-        <span>8 812 450-25-25</span>
-      </p>
-    </header>
+              <!-- <ul class="catalog-submenu">
+                <li class="catalog-submenu-item">
+                  <a href="#">Новинки</a>
+                </li>
+                <li class="catalog-submenu-item">
+                  <a href="catalog.html">Сливочное</a>
+                </li>
+                <li  class="catalog-submenu-item">
+                  <a href="#">Щербеты</a>
+                </li>
+                <li  class="catalog-submenu-item">
+                  <a href="#">Фруктовый лед</a>
+                </li>
+                <li  class="catalog-submenu-item">
+                  <a href="#">Мелорин</a>
+                </li>
+              </ul> -->
+            </li>
+            <li><a href="#">Доставка и оплата</a></li>
+            <li><a href="#">О Компании</a></li>
+          </ul>
+          <ul class="user-navigation">
+            <li class="user-navigation-item search">
+              <a class="visually-hidden" href="#">Поиск</a>
+              <!-- все popup скрываю на время построения сетки -->
 
-    <main>
+              <!-- <section class="popup popup-search">
+                <h2 class="visually-hidden">Форма поиска</h2>
+                <form class="search-form" action="index.html" method="post">
+                  <label class="visually-hidden" for="search-field">Что искать?</label>
+                  <input class="search-field" id="search-field" type="search" name="search" value="" placeholder="Что ищем?">
+                  <input type="submit" name="search" value="Искать">
+                </form>
+              </section> -->
+            </li>
+            <li class="user-navigation-item login-link">
+              <a href="#">Вход</a>
+              <!-- <section class="popup popup-login">
+                <h2 class="visually-hidden">Форма входа</h2>
+                <form class="login-form" action="index.html" method="post">
+                  <label class="visually-hidden" for="login-email">Электронная почта</label>
+                  <input class="login-email" id="login-email" type="email" name="login" placeholder="Электронная почта">
+                  <label class="visually-hidden" for="login-password">Пароль</label>
+                  <input class="login-password" id="login-password" type="password" name="password" placeholder="Пароль">
+                  <button class="button login-button" type="submit">Войти</button>
+                  <ul class="login-list">
+                    <li class="login-item">
+                      <a href="#">Забыли пароль?</a>
+                    </li>
+                    <li class="login-item">
+                      <a href="#">Новая регистрация</a>
+                    </li>
+                  </ul>
+                </form>
+              </section> -->
+            </li>
+            <li class="user-navigation-item basket">
+              <a href="#">Пусто</a>
+              <!-- <section class="popup popup-basket">
+                <h2 class="visually-hidden">Корзина</h2>
+                <table class="basket-table">
+                  <tr class="basket-table-item">
+                    <td><button class="modal-close" type="button">Отменить</button></td>
+                    <td><img src="img/creamy-orange-little.jpg" width="33" height="33" alt="Пломбир с апельсиновым джемом"></td>
+                    <td>Пломбир с апельсиновым джемом</td>
+                    <td>1,5 кг &times; <span>200 руб.</span></td>
+                    <td>300 руб.</td>
+                  </tr>
+                  <tr class="basket-table-item">
+                    <td><button class="modal-close" type="button">Отменить</button></td>
+                    <td><img src="img/creamy-straw-little.jpg" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
+                    <td>Клубничный пломбир с присыпкой<br>
+                    из белого шоколада</td>
+                    <td>1,5 кг &times; <span>300 руб.</span></td>
+                    <td>450 руб.</td>
+                  </tr>
+                </table>
+                <b>Итого: 750 руб.</b>
+                <a class="button basket-button" href="#">Оформить заказ</a>
+              </section> -->
+            </li>
+          </ul>
+        </nav>
+        <p class="header-contacts">
+          С 10 до 20, ежедневно<br> <!-- временно -->
+          <span>8 812 450-25-25</span>
+        </p>
+      </header>
+    </div>
+
+    <main class="wrapper">
       <h1 class="visually-hidden">Магазин мороженого &laquo;Глейси&raquo;</h1>
 
       <div class="container">
@@ -119,16 +123,16 @@
           <h2 class="visually-hidden">Специальные предложения</h2>
 
           <div class="special-offer">
-            <label for="creme-brulee-rasp">Крем-брюле и пломбир<br>
-            с малиновым джемом</label>
-            <label for="special-offer-2"></label>
-            <label for="special-offer-3"></label>
+            <h2 class="special-offer-heading special-offer-heading-1">Крем-брюле и&nbsp;пломбир с малиновым джемом</h2>
+            <h2 class="special-offer-heading special-offer-heading-2">Шоколадный пломбир и&nbsp;лимонный сорбет</h2>
+            <h2 class="special-offer-heading special-offer-heading-3">Пломбир с помадкой и&nbsp;клубничный щербет</h2>
           </div>
           <div class="choice">
-            <p>кнопки</p>
+            <label for="creme-brulee-rasp">1</label>
+            <label for="special-offer-2">2</label>
+            <label for="special-offer-3">3</label>
             <a class="button special-offer-button" href="#">Давайте оба!</a>
           </div>
-
         </section>
 
         <section class="presents half-page-columns">
@@ -242,9 +246,9 @@
 
       <section class="location">
         <h2 class="visually-hidden">Расположение</h2>
-        <figure class="map">
-          <img src="img/map.png" width="1200" height="430" alt="Карта с расположением магазина">
-        </figure>
+        <div class="map">
+          <!-- <img src="img/map.png" width="1200" height="430" alt="Карта с расположением магазина"> -->
+        </div>
       </section>
 
       <!-- <section class="contacts">
@@ -261,54 +265,57 @@
           (с 10 до 20 ежедневно)
         </p>
         <a class="button contacts-button" href="#">Форма обратной связи</a>
-      </section>
-    </main> -->
+      </section> -->
+    </main>
 
-    <footer class="main-footer container">
-      <div class="footer-social">
-        <h3 class="visually-hidden">Магазин Глейси в социальных сетях</h3>
-        <ul>
-          <li><a class="social-button social-button-tw" href="#">Твиттер</a></li>
-          <li><a class="social-button social-button-ig" href="#">Инстаграм</a></li>
-          <li><a class="social-button social-button-fb" href="#">Фейсбук</a></li>
-          <li><a class="social-button social-button-vk" href="#">Вконтакте</a></li>
-        </ul>
-      </div>
-      <div class="footer-info">
-        <h3 class="visually-hidden">Информация</h3>
-        <ul class="footer-info-list">
-          <li class="footer-info-item"><a href="#">Для поставщиков</a></li>
-          <li class="footer-info-item"><a href="#">О производстве</a></li>
-          <li class="footer-info-item"><a href="#">Наши документы</a></li>
-          <li class="footer-info-item"><a href="#">Экологические продукты</a></li>
-        </ul>
-      </div>
-      <div class="footer-copyright">
-        <a class="logo-html-academy" href="https://htmlacademy.ru">
-          <img src="img/svg/logo-htmlacademy.svg" width="108" height="39" alt="Логотип HTML Academy">
-        </a>
-        Сделано в <a href="https://htmlacademy.ru">HTML Academy</a> &copy; 2017
-      </div>
-    </footer>
+    <div class="wrapper">
+      <footer class="main-footer container">
+        <div class="footer-social">
+          <h3 class="visually-hidden">Магазин Глейси в социальных сетях</h3>
+          <ul>
+            <li><a class="social-button social-button-tw" href="#">Твиттер</a></li>
+            <li><a class="social-button social-button-ig" href="#">Инстаграм</a></li>
+            <li><a class="social-button social-button-fb" href="#">Фейсбук</a></li>
+            <li><a class="social-button social-button-vk" href="#">Вконтакте</a></li>
+          </ul>
+        </div>
+        <div class="footer-info">
+          <h3 class="visually-hidden">Информация</h3>
+          <ul class="footer-info-list">
+            <li class="footer-info-item"><a href="#">Для поставщиков</a></li>
+            <li class="footer-info-item"><a href="#">О производстве</a></li>
+            <li class="footer-info-item"><a href="#">Наши документы</a></li>
+            <li class="footer-info-item"><a href="#">Экологические продукты</a></li>
+          </ul>
+        </div>
+        <div class="footer-copyright">
+          <a class="logo-html-academy" href="https://htmlacademy.ru">
+            <img src="img/svg/logo-htmlacademy.svg" width="108" height="39" alt="Логотип HTML Academy">
+          </a>
+          Сделано в <a href="https://htmlacademy.ru">HTML Academy</a> &copy; 2017
+        </div>
+      </footer>
+    </div>
 
-    <!-- <section class="modal modal-feedback">
+    <section class="modal modal-feedback">
       <button class="modal-close" type="button">Закрыть</button>
       <h2 class="feedback-heading">Мы обязательно вам ответим!</h2>
       <form class="feedback-form" action="index.html" method="post">
         <p>
-          <label class="visually-hidden" for="feedback-name">Имя</label>
-          <input class="feedback-name" id="feedback-name" type="text" name="name" placeholder="Как вас зовут?">
+          <input class="feedback-field" id="feedback-name" type="text" name="name" placeholder="Как вас зовут?" required>
+          <label class="feedback-label" for="feedback-name">Как вас зовут?</label>
         </p>
         <p>
-          <label class="visually-hidden" for="feedback-email">Электронная почта</label>
-          <input class="feedback-email" id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?">
+          <input class="feedback-field" id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?" required>
+          <label class="feedback-label" for="feedback-email">Ваша почта для ответа?</label>
         </p>
         <p>
-          <label class="visually-hidden" for="feedback-textarea-text">Написать дополнительную информацию</label>
-          <textarea class="feedback-textarea-text" id="feedback-textarea-text" name="textarea-text" rows="8" cols="50" placeholder="Напишите что-нибудь..."></textarea>
+          <textarea class="feedback-field" id="feedback-textarea-text" name="textarea-text" rows="8" cols="50" placeholder="Напишите что-нибудь..." required></textarea>
+          <label class="feedback-label" for="feedback-textarea-text">Напишите что-нибудь...</label>
         </p>
         <button class="button feedback-button" type="submit">Отправить</button>
       </form>
-    </section> -->
+    </section>
+  </div>
   </body>
 </html>
