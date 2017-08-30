@@ -257,7 +257,7 @@ a {
 .login-link svg {
   position: absolute;
   top: 6px;
-  left: 16px;
+  left: 16px;c
 }
 
 .login-link path {
@@ -267,6 +267,15 @@ a {
 .login-link > a:hover path {
   fill: #000000;
 }
+
+.login-button {
+  display: inline-block;
+  position: absolute;
+
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 
 .basket > a {
   position: relative;
@@ -310,6 +319,14 @@ a {
   background-image: url("../img/svg/basket-red.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+}
+
+.basket-button {
+  display: inline-block;
+  position: absolute;
+
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /*  Подменю КАТАЛОГ  */
@@ -443,26 +460,13 @@ a {
 /*  -------Специальные предложения / Слайдер-------  */
 .slider {
   position: relative;
-  margin-top: 280px;  /* расстояние до меню */
-  margin-bottom: 40px;
+  margin-top: 274px;  /* расстояние до меню */
+  margin-bottom: 43px;
 
   text-align: center;
 
   /* Временно для сетки */
   outline: 2px solid #8c0f74;
-}
-
-.Подложка {
-  background-image: -moz-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  background-image: -ms-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
-  position: absolute;
-  left: 460px;
-  top: 542px;
-  width: 280px;
-  height: 64px;
-  z-index: 42;
 }
 
 .slider-input {
@@ -486,7 +490,7 @@ a {
 .choice {
   position: absolute;
   left: 0;
-  bottom: 22px;
+  bottom: 19px;
 
   font-size: 0;
 }
@@ -553,7 +557,7 @@ label[for="special-offer-3"] {
 .half-page-columns {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 
   /* Временно для сетки */
   outline: 2px solid #21cfdb;
@@ -615,7 +619,7 @@ label[for="special-offer-3"] {
   justify-content: space-between;
   width: 1172px;
   margin: 0 auto;
-  margin-bottom: 40px;
+  margin-bottom: 4px;
   padding: 0;
 
 
@@ -629,7 +633,7 @@ label[for="special-offer-3"] {
   width: 1172px;
   flex-wrap: wrap;
   margin: 0 auto;
-  margin-bottom: 80px;
+  margin-bottom: 48px;
   padding: 0;
 
   /* Временно для сетки */
@@ -637,15 +641,41 @@ label[for="special-offer-3"] {
 }
 
 .item {
+  position: relative;
   width: 293px;
   padding: 0 13px;
+  padding-top: 6px;
+  margin-bottom: 32px;
+
   box-sizing: border-box;
 }
 
 .item:hover {
+  margin-bottom: -41px;
+  z-index: 100;
+
   background-color: rgba(248, 247, 244, 0.2);
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
+}
+
+.item:hover .item-button {
+  display: inline-block;
+}
+
+.item.hit::before {
+  content: "";
+
+  position: absolute;
+  top: 6px;
+  left: 13px;
+
+  width: 61px;
+  height: 61px;
+
+  background-image: url("../img/svg/hit.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .item img {
@@ -653,7 +683,12 @@ label[for="special-offer-3"] {
 }
 
 .item-heading {
+  margin: 0;
+  margin-top: 6px;
+  padding: 0;
+
   text-align: center;
+  outline: 2px solid #73d923;
 }
 
 .item-heading a {
@@ -673,13 +708,48 @@ label[for="special-offer-3"] {
 }
 
 .price {
+  position: absolute;
+  top: 213px;
+  left: 13px;
+  margin: 0;
+
   font-size: 45px;
   line-height: 1em;
   font-weight: 700;
+
+  outline: 2px solid #73d923;
 }
 
 .price span {
+  position: relative;
+  padding-left: 34px;
+
   font-size: 30px;
+}
+
+.price span::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 3px;
+
+  width: 31px;
+  height: 36px;
+
+  background-image: url("../img/svg/ruble.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.item-button {
+  display: none;
+  position: absolute;
+  right: 46px;
+  bottom: 21px;
+
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
 /*  -------Особенности-------  */
@@ -787,9 +857,21 @@ label[for="special-offer-3"] {
 }
 
 /*  -------Блог-------  */
+.post-subscription {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  /* Временно для сетки */
+  outline: 2px solid #21cfdb;
+}
+
 .new-post {
   width: 560px;
   min-height: 220px;
+  padding-left: 19px;
+  padding-right: 19px;
+  box-sizing: border-box;
 
   color: #323232;
 
@@ -801,7 +883,16 @@ label[for="special-offer-3"] {
 }
 
 .new-post p {
+  margin: 0;
+  padding: 0;
+  padding-top: 22px;
+
   font-weight: 500;
+}
+
+.article-title {
+  margin: 0;
+  padding-top: 5px;
 }
 
 .article-title a {
@@ -814,8 +905,12 @@ label[for="special-offer-3"] {
 
 /*  -------Подписка-------  */
 .subscription {
+  position: relative;
   width: 560px;
   min-height: 220px;
+  padding-left: 26px;
+  padding-right: 26px;
+  box-sizing: border-box;
 
   background-color: #f8f7f4;
   background-image: url("../img/bg-subscription.png");
@@ -825,50 +920,95 @@ label[for="special-offer-3"] {
 }
 
 .subscription p {
+  margin: 0;
+  padding: 0;
+  padding-top: 35px;
+
   color: #5a5a5a;
 }
 
 .subscription input { /*как стилизовать PLACEHOLDER?*/
+  position: absolute;
+  bottom: 41px;
+  right: 166px;
+
+  display: inline-block;
+  width: 366px;
+  padding: 9px 14px;
+  box-sizing: border-box;
+
   font: inherit;
   line-height: 1.5em;
   font-weight: 700;
   color: #323232;
 
   background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  box-shadow: 0 0 0 1px #b3b3b3;
+  border: none;
   border-radius: 5px;
 }
 
 .subscription input:hover {
-  border: 2px solid #9a9a9a;
+  box-shadow: 0 0 0 2px #9a9a9a;
+  /*border: 2px solid #9a9a9a;*/
 }
 
 .subscription input:focus {
-  border: 2px solid #2e88e4;
+  box-shadow: 0 0 0 2px #2e88e4;
+}
+
+.subscription-button {
+  position: absolute;
+  bottom: 41px;
+  right: 24px;
+
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /*  -------Расположение-------  */
 .location {
-  /*width: 100%;*/
-  /*height: 430px;  иначе появляется отступ снизу */
-  /*margin: 0 auto;*/
-
-  /* Временно для сетки */
-  /*outline: 2px solid #fa5d59;*/
-}
-
-.map {
   width: 100%;
   min-height: 430px;
 
-  background-image: url("../img/map.png");
+  background-image: url("../img/map-pin.jpg"); /*вырезала карту вместе с пином и его тенью*/
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.container-location {
+  position: relative;
+  width: 1146px;
+  margin: 0 auto;
+  padding: 0;
+
+  /* Временно для сетки */
+  outline: 2px solid blue;
+}
+
+/*  Не получилось качественно спосиционировать  */
+
+/*.map::before {
+  content: "";
+
+  position: absolute;
+  top: 20%;
+  left: 43.6%;
+
+  width: 80px;
+  height: 140px;
+
+  background-image: url("../img/svg/pin.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}*/
+
 /*  -------Контакты-------  */
 .contacts {
+  position: absolute;
+  right: 0;
+  top: 62px;
   width: 302px;
   min-height: 305px;
 
@@ -891,6 +1031,14 @@ label[for="special-offer-3"] {
   font-weight: 700;
 }
 
+.contacts-button {
+  display: inline-block;
+  position: absolute;
+
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
 /*  -------Футер-------  */
 .main-footer {
   display: flex;
@@ -903,31 +1051,91 @@ label[for="special-offer-3"] {
 
 .footer-social {
   width: 186px;
-  margin-right: 214px;
+  margin-top: 17px;
+  margin-right: 207px;
 
   /* Временно для сетки */
   outline: 2px solid #afad1b;
 }
 
 .footer-social ul {
+  display: flex;
+  justify-content: space-between;
+  width: 186px;
   margin: 0;
   padding: 0;
 
   list-style: none;
 }
 
+.social-button {
+  display: inline-block;
+
+  width: 32px;
+  height: 32px;
+
+  opacity: 0.8;
+  background-color: transparent;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.social-button:hover,
+.social-button:focus  {
+  opacity: 1;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.social-button:active {
+  opacity: 1;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.social-button:active path {
+  fill: #e9e9e9;
+}
+
 .footer-info {
-  width: 340px;
+  margin-top: 12px;
+  width: 335px;
 
   /* Временно для сетки */
   outline: 2px solid #afad1b;
 }
 
-.footer-info ul {
+.footer-info-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   margin: 0;
   padding: 0;
+  height: 45px;
 
   list-style: none;
+
+  /* Временно для сетки */
+  outline: 2px solid #afad1b;
+}
+
+.footer-info-item {
+  display: block;
+  margin-left: 28px;
+}
+
+.footer-info-list::before {
+  content: "";
+
+  position: absolute;
+  top: 6px;
+  left: 6px;
+
+  width: 15px;
+  height: 13px;
+
+  background-image: url("../img/svg/heart.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .footer-info a {
@@ -950,7 +1158,9 @@ label[for="special-offer-3"] {
 }
 
 .footer-copyright {
-  width: 200px;
+  display: flex;
+  flex-direction: column;
+  width: 190px;
   margin: 0;
   margin-left: auto;
 
@@ -961,14 +1171,18 @@ label[for="special-offer-3"] {
   outline: 2px solid #afad1b;
 }
 
-.footer-copyright a:last-of-type {
+.academy {
+  margin: 0;
+}
+
+.footer-copyright a:not(.logo-html-academy) {
   color: #ffffff;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.footer-copyright a:last-of-type:hover, /*вложенность селекторов = 2?*/
-.footer-copyright a:last-of-type:focus {
+.footer-copyright a:not(.logo-html-academy):hover, /*вложенность селекторов = 2?*/
+.footer-copyright a:focus {
   color: #ffbc9e;
 
   border-bottom: 1px solid rgba(249, 172, 159, 0.3);
@@ -994,16 +1208,17 @@ label[for="special-offer-3"] {
   color: #323232;
 
   background-color: #ffffff;
-  border: solid 1px #d3d3d2;
+  box-shadow: 0 0 0 1px #b3b3b3;
+  border: none;
   border-radius: 5px;
 }
 
 .popup input:hover {
-  border: 2px solid #9a9a9a;
+  box-shadow: 0 0 0 2px #9a9a9a;
 }
 
 .popup input:focus {
-  border: 2px solid #2e88e4;
+  box-shadow: 0 0 0 2px #2e88e4;
 }
 
 /*  Попапы -- форма поиска  */
@@ -1062,6 +1277,9 @@ label[for="special-offer-3"] {
 .modal-feedback {
   display: none;
 
+  position: relative;
+  /*display: none;*/
+
   width: 478px;
   min-height: 443px;
 
@@ -1089,27 +1307,31 @@ label[for="special-offer-3"] {
 }
 
 .feedback-field { /*как стилизовать PLACEHOLDER?*/
+  display: inline-block;
+  position: absolute;
+
   font: inherit;
   font-size: 16px;
   line-height: 1.5em;
   font-weight: 700;
 
   background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  box-shadow: 0 0 0 1px #b3b3b3;
+  border: none;
   border-radius: 5px;
 }
 
 .feedback-field:valid {
-  border: 1px solid #b3b3b3;
+  box-shadow: 0 0 0 1px #b3b3b3;
 }
 
 .feedback-field:hover {
-  border: 2px solid #9a9a9a;
+  box-shadow: 0 0 0 2px #9a9a9a;
 }
 
 
 .feedback-field:focus {
-  border: 2px solid #2e88e4;
+  box-shadow: 0 0 0 2px #2e88e4;
 }
 
 .feedback-field:valid + .feedback-label {
@@ -1122,6 +1344,14 @@ label[for="special-offer-3"] {
   visibility: visible;
 
   color: #5b9ddf;
+}
+
+.feedback-button {
+  display: inline-block;
+  position: absolute;
+
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 
@@ -1146,7 +1376,7 @@ label[for="special-offer-3"] {
 }
 
 .breadcrumbs li {
-  margin-right: 8px;
+  margin-right: 6px;
 }
 
 .breadcrumbs a {
@@ -1169,7 +1399,7 @@ label[for="special-offer-3"] {
 .page-title {
   margin: 0;
   padding: 0;
-  margin-top: 5px;
+  margin-top: 3px;
   margin-bottom: 28px;
 
   font-size: 35px;
@@ -1216,15 +1446,19 @@ label[for="special-offer-3"] {
 .filter-price-wrapper,
 .filter-fat-wrapper,
 .filter-filler-wrapper {
+  padding: 7px 27px;
+
+  background-image: none;
+  border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 .filter-sorting {
-  margin-bottom: 17px;
+  margin-bottom: 16px;
 }
 
 .filter select {
-  width: 194px;
+  width: 193px;
 
   font: inherit;
   font-size: 16px;
@@ -1257,6 +1491,7 @@ label[for="special-offer-3"] {
 }
 
 .filter-button {
+  align-self: flex-end; /*иначе кнопкак вертикально тянется*/
   padding: 7px 27px;
 
   color: #ffffff;
@@ -1271,7 +1506,6 @@ label[for="special-offer-3"] {
   border-radius: 20px;
   border: solid 2px #ffffff;
 }
-
 
 .filter-button:hover,
 .filter-button:focus {
