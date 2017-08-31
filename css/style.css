@@ -1044,7 +1044,7 @@ label[for="special-offer-3"] {
   width: 302px;
   min-height: 305px;
   box-sizing: border-box;
-  padding-top: 28px;
+  padding-top: 29px;
   padding-left: 25px;
 
   font-size: 14px;
@@ -1239,6 +1239,11 @@ label[for="special-offer-3"] {
 
 /*  -------Попапы-------  */
 .popup {
+  box-sizing: border-box;
+  padding-top: 21px;
+  padding-left: 16px;
+  padding-right: 16px;
+
   font-size: 13px;
   color: #323232;
 
@@ -1248,6 +1253,11 @@ label[for="special-offer-3"] {
 }
 
 .popup input { /*как стилизовать PLACEHOLDER?*/
+  display: inline-block;
+  width: 100%;
+  padding: 9px 15px;
+  box-sizing: border-box;
+
   font: inherit;
   font-size: 14px;
   line-height: 1.71em;
@@ -1281,12 +1291,29 @@ label[for="special-offer-3"] {
 .popup-login {
   display: none;
   position: absolute;
+  padding-left: 19px;
+  padding-right: 17px;
 
   width: 277px;
   min-height: 214px;
 }
 
+.login-form {
+  position: relative;
+}
+
+.popup-login input {
+  margin-bottom: 22px;
+}
+
 .login-list {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 125px;
+  left: 122px;
+  display: block;
+
   list-style: none;
 }
 
@@ -1587,7 +1614,7 @@ label[for="special-offer-3"] {
   padding: 0;
   margin: 0;
   margin-left: auto;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 
   list-style: none;
 
