@@ -212,7 +212,7 @@ a {
   list-style: none;
 
   /* Временно для сетки */
-  outline: 2px solid green;
+  outline: 2px solid yellow;
 }
 
 .user-navigation-item > a { /*добавлен новый класс
@@ -234,6 +234,13 @@ a {
   border-radius: 16px;
 }
 
+.search,
+.login-link,
+.not-empty {
+  position: relative;
+  height: 32px;
+}
+
 .search > a {
   width: 32px;
   height: 32px;
@@ -243,8 +250,17 @@ a {
   box-sizing: border-box;
 }
 
-.search > a:hover path {
+.search > a:hover path,
+.search > a:focus path {
   fill: #000000;
+}
+
+.search:hover .popup-search,
+.search:focus .popup-search,
+.search:active .popup-search {
+  display: block;
+  top: 36px;
+  right: 0;
 }
 
 .login-link > a {
@@ -257,14 +273,15 @@ a {
 .login-link svg {
   position: absolute;
   top: 6px;
-  left: 16px;c
+  left: 16px;
 }
 
 .login-link path {
   fill: #ffffff;
 }
 
-.login-link > a:hover path {
+.login-link > a:hover path,
+.login-link > a:focus path {
   fill: #000000;
 }
 
@@ -276,6 +293,12 @@ a {
   padding-right: 25px;
 }
 
+.login-link:hover .popup-login,
+.login-link:focus .popup-login {
+  display: block;
+  top: 36px;
+  right: 0;
+}
 
 .basket > a {
   position: relative;
@@ -329,9 +352,17 @@ a {
   padding-right: 15px;
 }
 
+.not-empty:hover .popup-basket,
+.not-empty:focus .popup-basket {
+  display: block;
+  top: 36px;
+  right: 0;
+}
+
 /*  Подменю КАТАЛОГ  */
 .site-navigation-catalog {
   position: relative;
+  height: 32px;
 }
 
 .catalog-submenu {
@@ -350,7 +381,8 @@ a {
   list-style: none;
 }
 
-.site-navigation-catalog:hover .catalog-submenu {
+.site-navigation-catalog:hover .catalog-submenu,
+.site-navigation-catalog:focus .catalog-submenu {
   display: block;
 }
 
@@ -1011,6 +1043,9 @@ label[for="special-offer-3"] {
   top: 62px;
   width: 302px;
   min-height: 305px;
+  box-sizing: border-box;
+  padding-top: 28px;
+  padding-left: 25px;
 
   font-size: 14px;
   line-height: 1.429em;
@@ -1023,8 +1058,15 @@ label[for="special-offer-3"] {
   border-radius: 15px;
 }
 
+.contacts p {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
 .contacts b {
   display: block; /* для переноса на следующую строку */
+  padding-top: 4px;
+  padding-bottom: 2px;
 
   font-size: 18px;
   line-height: 1.333em;
@@ -1034,16 +1076,18 @@ label[for="special-offer-3"] {
 .contacts-button {
   display: inline-block;
   position: absolute;
+  bottom: 31px;
 
   padding-left: 28px;
   padding-right: 28px;
 }
 
+
 /*  -------Футер-------  */
 .main-footer {
   display: flex;
   padding-top: 18px;
-  margin-bottom: 28px;
+  padding-bottom: 28px;
 }
 
 .main-footer.inner {
@@ -1195,8 +1239,6 @@ label[for="special-offer-3"] {
 
 /*  -------Попапы-------  */
 .popup {
-  display: none;
-
   font-size: 13px;
   color: #323232;
 
@@ -1228,12 +1270,18 @@ label[for="special-offer-3"] {
 
 /*  Попапы -- форма поиска  */
 .popup-search {
+  display: none;
+  position: absolute;
+
   width: 341px;
   min-height: 84px;
 }
 
 /*  Попапы -- форма входа  */
 .popup-login {
+  display: none;
+  position: absolute;
+
   width: 277px;
   min-height: 214px;
 }
@@ -1258,6 +1306,9 @@ label[for="special-offer-3"] {
 
 /*  Попапы -- корзина  */
 .popup-basket {
+  display: none;
+  position: absolute;
+
   width: 539px;
   min-height: 242px;
 
