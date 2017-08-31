@@ -112,32 +112,30 @@ a {
 
 .button:hover,
 .button:focus {
-  background-image: -moz-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  background-image: -ms-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
+  background-image: none;
+  background-color: #f38166;
+  box-shadow: 0px 1px 2px 0px #ac1000;
 }
 
 .special-offer-button:hover,
 .special-offer-button:focus {
-  background-image: -moz-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  background-image: -ms-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
+  background-image: none;
+  background-color: #f38166;
+  box-shadow: 0px 2px 2px 0px #ac1000;
 }
 
 .button:active {
   background-image: -moz-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   background-image: -webkit-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
-  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+  box-shadow: inset 0px 2px 2px 0px #942718;
 }
 
 .special-offer-button:active {
   background-image: -moz-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   background-image: -webkit-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
-  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+  box-shadow: inset 0px 2px 2px 0px #942718;
 }
 
 /*  -------Header и навигации-------  */
@@ -240,7 +238,7 @@ a {
   position: relative;
   height: 32px;
 }
-
+/*---Поиск---*/
 .search > a {
   width: 32px;
   height: 32px;
@@ -262,7 +260,7 @@ a {
   top: 36px;
   right: 0;
 }
-
+/*---Вход---*/
 .login-link > a {
   position: relative;
 
@@ -285,21 +283,13 @@ a {
   fill: #000000;
 }
 
-.login-button {
-  display: inline-block;
-  position: absolute;
-
-  padding-left: 25px;
-  padding-right: 25px;
-}
-
 .login-link:hover .popup-login,
 .login-link:focus .popup-login {
   display: block;
   top: 36px;
   right: 0;
 }
-
+/*---Корзина---*/
 .basket > a {
   position: relative;
   width: 118px;
@@ -308,25 +298,27 @@ a {
   box-sizing: border-box;
 }
 
+.empty > a {
+  position: relative;
+}
+
+.empty svg {
+  position: absolute;
+  top: 6px;
+  left: 16px;
+}
+
+.empty > a:hover path,
+.empty > a:focus path,
+.empty > a:hover circle,
+.empty > a:focus circle {
+  fill: #000000;
+}
+
 .not-empty > a {
   color: #333333;
 
   background-color: #f8f7f4;
-}
-
-.empty > a::before {
-  content: "";
-
-  position: absolute;
-  top: 6px;
-  left: 16px;
-
-  width: 21px;
-  height: 20px;
-
-  background-image: url("../img/svg/basket.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
 .not-empty > a::before {
@@ -412,13 +404,6 @@ a {
   color: #333333;
 
   background-color: #f8f7f4;
-}
-
-.empty > a:hover,
-.empty > a:focus {
-  color: #ffffff;
-
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .site-navigation a:active {
@@ -581,8 +566,28 @@ label[for="special-offer-3"] {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-.choice label:active {
+.choice label:active  {
   background-color: #ffffff;
+}
+
+/*Поведение переключателей слайдера*/
+
+input#special-offer-1:active ~ .body-wrapper label[for="special-offer-2"],
+input#special-offer-1:active ~ .body-wrapper
+label[for="special-offer-3"] {
+  background-color: transparent;
+}
+
+input#special-offer-2:active ~ .body-wrapper label[for="special-offer-1"],
+input#special-offer-2:active ~ .body-wrapper
+label[for="special-offer-3"] {
+  background-color: transparent;
+}
+
+input#special-offer-3:active ~ .body-wrapper label[for="special-offer-1"],
+input#special-offer-3:active ~ .body-wrapper
+label[for="special-offer-2"] {
+  background-color: transparent;
 }
 
 /*  -------Подарки-------  */
@@ -603,6 +608,7 @@ label[for="special-offer-3"] {
   position: relative;
   width: 560px;
   min-height: 229px;
+  box-sizing: border-box;
 
   border-radius: 15px;
 }
@@ -1304,6 +1310,16 @@ label[for="special-offer-3"] {
 
 .popup-login input {
   margin-bottom: 22px;
+}
+
+.login-button {
+  display: inline-block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .login-list {
