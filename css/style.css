@@ -38,7 +38,7 @@ body {
   padding: 0;
 
   /* Временно для сетки */
-  outline: 2px solid blue;
+  /*outline: 2px solid blue;*/
 }
 
 .wrapper {
@@ -145,14 +145,14 @@ a {
   padding-top: 10px;
 
   /* Временно для сетки */
-  outline: 2px solid red;
+  /*outline: 2px solid red;*/
 }
 
 .main-navigation {
   display: flex;
 
   /* Временно для сетки */
-  outline: 2px solid orange;
+  /*outline: 2px solid orange;*/
 }
 
 .logo {
@@ -161,7 +161,7 @@ a {
   margin-right: 9px;
 
   /* Временно для сетки */
-  outline: 2px solid green;
+  /*outline: 2px solid green;*/
 }
 
 /*  Навигация по сайту  */
@@ -177,12 +177,13 @@ a {
   list-style: none;
 
   /* Временно для сетки */
-  outline: 2px solid green;
+  /*outline: 2px solid green;*/
 }
 
-.site-navigation a {
+.site-navigation-link {
   display: block;
-  padding: 8px 14px;
+  /*padding: 8px 14px;*/
+  margin: 8px 14px;
 
   font-size: 16px;
   line-height: 1.125em;
@@ -192,7 +193,6 @@ a {
 
   background-color: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
 }
 
 /*  Навигация пользователя  */
@@ -210,7 +210,7 @@ a {
   list-style: none;
 
   /* Временно для сетки */
-  outline: 2px solid yellow;
+  /*outline: 2px solid yellow;*/
 }
 
 .user-navigation-item > a { /*добавлен новый класс
@@ -257,7 +257,7 @@ a {
 .search:focus .popup-search,
 .search:active .popup-search {
   display: block;
-  top: 36px;
+  top: 32px;
   right: 0;
 }
 /*---Вход---*/
@@ -286,7 +286,7 @@ a {
 .login-link:hover .popup-login,
 .login-link:focus .popup-login {
   display: block;
-  top: 36px;
+  top: 32px;
   right: 0;
 }
 /*---Корзина---*/
@@ -347,22 +347,22 @@ a {
 .not-empty:hover .popup-basket,
 .not-empty:focus .popup-basket {
   display: block;
-  top: 36px;
+  top: 32px;
   right: 0;
 }
 
 /*  Подменю КАТАЛОГ  */
 .site-navigation-catalog {
   position: relative;
-  height: 32px;
+  height: 40px; /*увеличена высота для избежания промежутков между пунктом меню и подменю*/
 }
 
 .catalog-submenu {
   display: none;
   position: absolute;
-  top: 37px;
+  top: 38px;
   left: -7px;
-  width: 143px;
+  min-width: 143px;
   margin: 0;
   padding: 0;
 
@@ -379,36 +379,51 @@ a {
 }
 
 .catalog-submenu a {
+  display: block;
+  padding: 7px 0 8px 20px;
+
   font-size: 14px;
   line-height: 1.143em;
   font-weight: 400;
   color: #323232;
-
-  background-color: #f8f7f4;
 }
 
 .catalog-submenu-item:first-child a {
+  padding-top: 10px;
+  padding-bottom: 14px;
   font-weight: 700;
 }
 
-/*  Поведение ссылок при наведении курсора и нажатии  */
-.site-navigation a:hover,
-.site-navigation a:focus {
-  color: #333333;
-
-  background-color: #f7f6f3;
+.catalog-submenu-item:last-child a {
+  padding-bottom: 14px;
 }
 
-.user-navigation-item > a:hover,
-.user-navigation-item > a:focus {
-  color: #333333;
-
-  background-color: #f8f7f4;
+.catalog-submenu-item:first-child,
+.catalog-submenu-item:first-child a {
+	border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-.site-navigation a:active {
-  background-color: #ededed;
-  box-shadow: inset 0px 2px 1px 0px #696969;
+.catalog-submenu-item:last-child,
+.catalog-submenu-item:last-child a {
+	border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.catalog-submenu-item:first-child {
+  position: relative;
+}
+
+.catalog-submenu-item:first-child::after {
+  content: "";
+
+  position: absolute;
+  right: 9px;
+  bottom: 0;
+  left:6px;
+  height: 1px;
+
+  background-color: #d1d0ce;
 }
 
 .catalog-submenu a:hover,
@@ -421,21 +436,6 @@ a {
   box-shadow: none;
 }
 
-/*  Нахождение на текущей странице  */
-.site-navigation-current > a {
-  color: #ffffff;
-
-  background-color: #d07058;
-}
-
-.site-navigation-current > a:hover,
-.site-navigation-current > a:focus,
-.site-navigation-current > a:active {
-  color: #ffffff;
-
-  background-color: #d07058;
-  box-shadow: none;
-}
 
 .catalog-submenu-item-current a {
   color: #ffffff;
@@ -449,6 +449,51 @@ a {
   color: #ffffff;
 
   background-color: #d07058;
+}
+
+/*  Поведение ссылок при наведении курсора и нажатии  */
+.site-navigation-link:hover,
+.site-navigation-link:focus {
+  padding: 8px 14px;
+  margin: 0;
+
+  color: #333333;
+
+  background-color: #f7f6f3;
+  border-bottom: none;
+  border-radius: 16px;
+}
+
+.user-navigation-item > a:hover,
+.user-navigation-item > a:focus {
+  color: #333333;
+
+  background-color: #f8f7f4;
+}
+
+.site-navigation-link:active {
+  padding: 8px 14px;
+  margin: 0;
+
+  background-color: #ededed;
+  box-shadow: inset 0px 2px 1px 0px #696969;
+  border-bottom: none;
+  border-radius: 16px;
+}
+
+/*  Нахождение на текущей странице  */
+.site-navigation-current,
+.site-navigation-current:hover,
+.site-navigation-current:focus,
+.site-navigation-current:active {
+  padding: 8px 14px;
+  margin: 0;
+
+  color: #ffffff;
+  border-bottom: none;
+  border-radius: 16px;
+  background-color: #d07058;
+  box-shadow: none;
 }
 
 /*  Контакты  */
@@ -483,7 +528,7 @@ a {
   text-align: center;
 
   /* Временно для сетки */
-  outline: 2px solid #8c0f74;
+  /*outline: 2px solid #8c0f74;*/
 }
 
 .slider-input {
@@ -571,7 +616,6 @@ label[for="special-offer-3"] {
 }
 
 /*Поведение переключателей слайдера*/
-
 input#special-offer-1:active ~ .body-wrapper label[for="special-offer-2"],
 input#special-offer-1:active ~ .body-wrapper
 label[for="special-offer-3"] {
@@ -597,7 +641,7 @@ label[for="special-offer-2"] {
   margin-bottom: 35px;
 
   /* Временно для сетки */
-  outline: 2px solid #21cfdb;
+  /*outline: 2px solid #21cfdb;*/
 }
 
 .presents {
@@ -660,9 +704,8 @@ label[for="special-offer-2"] {
   margin-bottom: 4px;
   padding: 0;
 
-
   /* Временно для сетки */
-  outline: 2px solid #73d923;
+  /*outline: 2px solid #73d923;*/
 }
 
 .catalog {
@@ -675,7 +718,7 @@ label[for="special-offer-2"] {
   padding: 0;
 
   /* Временно для сетки */
-  outline: 2px solid #73d923;
+  /*outline: 2px solid #73d923;*/
 }
 
 .item {
@@ -726,7 +769,7 @@ label[for="special-offer-2"] {
   padding: 0;
 
   text-align: center;
-  outline: 2px solid #73d923;
+  /*outline: 2px solid #73d923;*/
 }
 
 .item-heading a {
@@ -755,7 +798,7 @@ label[for="special-offer-2"] {
   line-height: 1em;
   font-weight: 700;
 
-  outline: 2px solid #73d923;
+  /*outline: 2px solid #73d923;*/
 }
 
 .price span {
@@ -901,7 +944,7 @@ label[for="special-offer-2"] {
   margin-bottom: 40px;
 
   /* Временно для сетки */
-  outline: 2px solid #21cfdb;
+  /*outline: 2px solid #21cfdb;*/
 }
 
 .new-post {
@@ -1022,25 +1065,8 @@ label[for="special-offer-2"] {
   padding: 0;
 
   /* Временно для сетки */
-  outline: 2px solid blue;
+  /*outline: 2px solid blue;*/
 }
-
-/*  Не получилось качественно спосиционировать  */
-
-/*.map::before {
-  content: "";
-
-  position: absolute;
-  top: 20%;
-  left: 43.6%;
-
-  width: 80px;
-  height: 140px;
-
-  background-image: url("../img/svg/pin.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}*/
 
 /*  -------Контакты-------  */
 .contacts {
@@ -1106,7 +1132,7 @@ label[for="special-offer-2"] {
   margin-right: 207px;
 
   /* Временно для сетки */
-  outline: 2px solid #afad1b;
+  /*outline: 2px solid #afad1b;*/
 }
 
 .footer-social ul {
@@ -1151,7 +1177,7 @@ label[for="special-offer-2"] {
   width: 335px;
 
   /* Временно для сетки */
-  outline: 2px solid #afad1b;
+  /*outline: 2px solid #afad1b;*/
 }
 
 .footer-info-list {
@@ -1166,7 +1192,7 @@ label[for="special-offer-2"] {
   list-style: none;
 
   /* Временно для сетки */
-  outline: 2px solid #afad1b;
+  /*outline: 2px solid #afad1b;*/
 }
 
 .footer-info-item {
@@ -1219,7 +1245,7 @@ label[for="special-offer-2"] {
   line-height: 1.5em;
 
   /* Временно для сетки */
-  outline: 2px solid #afad1b;
+  /*outline: 2px solid #afad1b;*/
 }
 
 .academy {
@@ -1244,7 +1270,8 @@ label[for="special-offer-2"] {
 }
 
 /*  -------Попапы-------  */
-.popup {
+.popup form,
+.basket-container {
   box-sizing: border-box;
   padding-top: 21px;
   padding-left: 16px;
@@ -1288,7 +1315,10 @@ label[for="special-offer-2"] {
 .popup-search {
   display: none;
   position: absolute;
+  padding-top: 4px;
+}
 
+.search-form {
   width: 341px;
   min-height: 84px;
 }
@@ -1297,15 +1327,15 @@ label[for="special-offer-2"] {
 .popup-login {
   display: none;
   position: absolute;
-  padding-left: 19px;
-  padding-right: 17px;
-
-  width: 277px;
-  min-height: 214px;
+  padding-top: 4px;
 }
 
 .login-form {
   position: relative;
+  padding-left: 19px;
+  padding-right: 17px;
+  width: 277px;
+  min-height: 214px;
 }
 
 .popup-login input {
@@ -1315,8 +1345,8 @@ label[for="special-offer-2"] {
 .login-button {
   display: inline-block;
   position: absolute;
-  top: 125px;
-  left: 0;
+  top: 146px;
+  left: 16px;
 
   padding-left: 25px;
   padding-right: 25px;
@@ -1326,8 +1356,8 @@ label[for="special-offer-2"] {
   position: absolute;
   margin: 0;
   padding: 0;
-  top: 125px;
-  left: 122px;
+  top: 146px;
+  left: 138px;
   display: block;
 
   list-style: none;
@@ -1351,6 +1381,11 @@ label[for="special-offer-2"] {
 .popup-basket {
   display: none;
   position: absolute;
+  padding-top: 4px;
+}
+
+.basket-container {
+  position: relative;
 
   width: 539px;
   min-height: 242px;
@@ -1522,7 +1557,7 @@ label[for="special-offer-2"] {
   width: 862px;
 
   /* Временно для сетки */
-  outline: 2px solid #ff6ba9;
+  /*outline: 2px solid #ff6ba9;*/
 }
 
 .filter fieldset {

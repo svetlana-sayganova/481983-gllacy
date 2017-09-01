@@ -14,8 +14,8 @@
             <img src="img/svg/logo.svg" width="154" height="64" alt="Логотип магазина мороженого &laquo;Глейси&raquo;">
           </a>
           <ul class="site-navigation">
-            <li class="site-navigation-catalog site-navigation-current">
-              <a href="#">Каталог</a>
+            <li class="site-navigation-catalog">
+              <a class="site-navigation-link site-navigation-current" href="#">Каталог</a>
               <ul class="catalog-submenu">
                 <li class="catalog-submenu-item">
                   <a href="#">Новинки</a>
@@ -34,8 +34,8 @@
                 </li>
               </ul>
             </li>
-            <li><a href="#">Доставка и оплата</a></li>
-            <li><a href="#">О Компании</a></li>
+            <li><a class="site-navigation-link" href="#">Доставка и оплата</a></li>
+            <li><a class="site-navigation-link" href="#">О Компании</a></li>
           </ul>
           <ul class="user-navigation">
             <li class="user-navigation-item search">
@@ -78,26 +78,28 @@
             <li class="user-navigation-item basket not-empty">
               <a href="#">2 товара</a>
               <section class="popup popup-basket">
-                <h2 class="visually-hidden">Корзина</h2>
-                <table class="basket-table">
-                  <tr class="basket-table-item">
-                    <td><button class="modal-close" type="button">Отменить</button></td>
-                    <td><img src="img/creamy-orange-little.jpg" width="33" height="33" alt="Пломбир с апельсиновым джемом"></td>
-                    <td>Пломбир с апельсиновым джемом</td>
-                    <td>1,5 кг &times; <span>200 руб.</span></td>
-                    <td>300 руб.</td>
-                  </tr>
-                  <tr class="basket-table-item">
-                    <td><button class="modal-close" type="button">Отменить</button></td>
-                    <td><img src="img/creamy-straw-little.jpg" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
-                    <td>Клубничный пломбир с присыпкой<br>
-                    из белого шоколада</td>
-                    <td>1,5 кг &times; <span>300 руб.</span></td>
-                    <td>450 руб.</td>
-                  </tr>
-                </table>
-                <b>Итого: 750 руб.</b>
-                <a class="button basket-button" href="#">Оформить заказ</a>
+                <div class="basket-container">
+                  <h2 class="visually-hidden">Корзина</h2>
+                  <table class="basket-table">
+                    <tr class="basket-table-item">
+                      <td><button class="modal-close" type="button">Отменить</button></td>
+                      <td><img src="img/creamy-orange-little.jpg" width="33" height="33" alt="Пломбир с апельсиновым джемом"></td>
+                      <td>Пломбир с апельсиновым джемом</td>
+                      <td>1,5 кг &times; <span>200 руб.</span></td>
+                      <td>300 руб.</td>
+                    </tr>
+                    <tr class="basket-table-item">
+                      <td><button class="modal-close" type="button">Отменить</button></td>
+                      <td><img src="img/creamy-straw-little.jpg" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада"></td>
+                      <td>Клубничный пломбир с присыпкой<br>
+                      из белого шоколада</td>
+                      <td>1,5 кг &times; <span>300 руб.</span></td>
+                      <td>450 руб.</td>
+                    </tr>
+                  </table>
+                  <b>Итого: 750 руб.</b>
+                  <a class="button basket-button" href="#">Оформить заказ</a>
+                </div>
               </section>
             </li>
           </ul>
