@@ -430,7 +430,6 @@ a {
   box-shadow: none;
 }
 
-
 .catalog-submenu-item-current a {
   color: #ffffff;
 
@@ -440,6 +439,8 @@ a {
 .catalog-submenu-item-current a:hover,
 .catalog-submenu-item-current a:focus,
 .catalog-submenu-item-current a:active {
+  cursor: default;
+
   color: #ffffff;
 
   background-color: #d07058;
@@ -978,6 +979,11 @@ label[for="special-offer-2"] {
   text-decoration: underline;
 }
 
+.article-title a:hover,
+.article-title a:focus {
+  color: #e84d37;
+}
+
 /*  -------Подписка-------  */
 .subscription {
   position: relative;
@@ -996,17 +1002,20 @@ label[for="special-offer-2"] {
 
 .subscription p {
   margin: 0;
+  margin-bottom: 37px;
   padding: 0;
   padding-top: 35px;
 
   color: #5a5a5a;
 }
 
-.subscription input { /*как стилизовать PLACEHOLDER?*/
-  position: absolute;
-  bottom: 41px;
-  right: 166px;
+.subscription-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
+.subscription input { /*как стилизовать PLACEHOLDER?*/
   display: inline-block;
   width: 366px;
   padding: 9px 14px;
@@ -1029,14 +1038,51 @@ label[for="special-offer-2"] {
 }
 
 .subscription input:focus {
+  outline: none;
   box-shadow: 0 0 0 2px #2e88e4;
 }
 
-.subscription-button {
-  position: absolute;
-  bottom: 41px;
-  right: 24px;
+.subscription-container {
+  position: relative;
+}
 
+.subscription-label {
+  display: none;
+
+  font: inherit;
+  font-size: 11px;
+  line-height: 1.181;
+}
+
+.subscription-email:valid + .subscription-label {
+  display: block;
+  position: absolute;
+
+  top: -16px;
+  left: 13px;
+
+  color: #999999;
+}
+
+.subscription-email:focus + .subscription-label {
+  display: block;
+  position: absolute;
+
+  top: -16px;
+  left: 13px;
+
+  color: #5b9ddf;
+}
+
+.subscription-email::placeholder {
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5em;
+  font-weight: 400;
+  color: #999999;
+}
+
+.subscription-button {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -1194,19 +1240,10 @@ label[for="special-offer-2"] {
   margin-left: 28px;
 }
 
-.footer-info-list::before {
-  content: "";
-
+.footer-info-list svg {
   position: absolute;
   top: 6px;
   left: 6px;
-
-  width: 15px;
-  height: 13px;
-
-  background-image: url("../img/svg/heart.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
 .footer-info a {
@@ -1217,7 +1254,7 @@ label[for="special-offer-2"] {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.footer-info-item:first-of-type a {
+.heart {
   font-weight: 700;
 }
 
@@ -1226,6 +1263,11 @@ label[for="special-offer-2"] {
   color: #ffbc9e;
 
   border-bottom: 1px solid rgba(249, 172, 159, 0.3);
+}
+
+.heart:hover + svg path,
+.heart:focus + svg path {
+  fill: #ffbc9e;
 }
 
 .footer-copyright {
@@ -1297,11 +1339,20 @@ label[for="special-offer-2"] {
   border-radius: 5px;
 }
 
+.popup-field::placeholder {
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.71em;
+  font-weight: 400;
+  color: #999999;
+}
+
 .popup input:hover {
   box-shadow: 0 0 0 2px #9a9a9a;
 }
 
 .popup input:focus {
+  outline: none;
   box-shadow: 0 0 0 2px #2e88e4;
 }
 
@@ -1316,6 +1367,40 @@ label[for="special-offer-2"] {
   width: 341px;
   min-height: 84px;
 }
+
+.popup-container {
+  position: relative;
+}
+
+.popup-label {
+  display: none;
+
+  font: inherit;
+  font-size: 11px;
+  line-height: 1.181;
+}
+
+.popup-field:valid + .popup-label {
+  display: block;
+  position: absolute;
+
+  top: -16px;
+  left: 13px;
+
+  color: #999999;
+}
+
+.popup-field:focus + .popup-label {
+  display: block;
+  position: absolute;
+
+  top: -16px;
+  left: 13px;
+
+  color: #5b9ddf;
+}
+
+
 
 /*  Попапы -- форма входа  */
 .popup-login {
@@ -1381,6 +1466,7 @@ label[for="special-offer-2"] {
 .basket-container {
   position: relative;
   padding-top: 19px;
+  text-align: right;
 
   width: 539px;
   min-height: 242px;
@@ -1409,8 +1495,8 @@ label[for="special-offer-2"] {
 
 .basket-button {
   display: inline-block;
-  position: absolute;
-  right: 14px;
+  /*position: absolute;
+  right: 14px;*/
 
   padding-left: 15px;
   padding-right: 15px;
@@ -1482,11 +1568,13 @@ td {
 .modal-feedback {
   /*display: none;*/
   display: block;
+  padding: 16px 25px;
 
   position: relative;
 
   width: 478px;
   min-height: 443px;
+  box-sizing: border-box;
 
   color: #323232;
 
@@ -1497,33 +1585,64 @@ td {
   border-radius: 10px;
 }
 
+.modal-feedback .modal-close::before {
+  content: "";
+
+  position: absolute;
+  top: 15px;
+  right: 16px;
+
+  width: 18px;
+  height: 17px;
+
+  background-image: url("../img/svg/cross-big.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
 .feedback-heading {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+
   font-size: 24px;
   line-height: 1.167em;
   font-weight: 500;
 }
 
-.feedback-label {
-  visibility: hidden;
-
-  font: inherit;
-  font-size: 11px;
-  line-height: 1.181;
-}
-
 .feedback-field { /*как стилизовать PLACEHOLDER?*/
   display: inline-block;
-  position: absolute;
+  width: 265px;
+  padding: 9px 15px;
+  box-sizing: border-box;
+  margin-bottom: 22px;
 
   font: inherit;
   font-size: 16px;
   line-height: 1.5em;
   font-weight: 700;
+  color: #323232;
 
   background-color: #ffffff;
   box-shadow: 0 0 0 1px #b3b3b3;
   border: none;
   border-radius: 5px;
+}
+
+.feedback-field::placeholder {
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5em;
+  font-weight: 400;
+  color: #999999;
+}
+
+ textarea.feedback-field {
+  outline: none;
+  resize: none;
+  width: 100%;
+  min-height: 153px;
+  /*margin-bottom: 25px;*/
 }
 
 .feedback-field:valid {
@@ -1534,26 +1653,51 @@ td {
   box-shadow: 0 0 0 2px #9a9a9a;
 }
 
-
 .feedback-field:focus {
+  outline: none;
   box-shadow: 0 0 0 2px #2e88e4;
 }
 
+.feedback-container {
+  position: relative;
+}
+
+.feedback-label {
+  display: none;
+
+  font: inherit;
+  font-size: 11px;
+  line-height: 1.181;
+}
+
 .feedback-field:valid + .feedback-label {
-  visibility: visible;
+  display: block;
+  position: absolute;
+
+  top: -16px;
+  left: 13px;
 
   color: #999999;
 }
 
 .feedback-field:focus + .feedback-label {
-  visibility: visible;
+  display: block;
+  position: absolute;
+
+  top: -16px;
+  left: 13px;
 
   color: #5b9ddf;
 }
 
+.modal-feedback p {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
 .feedback-button {
   display: inline-block;
-  position: absolute;
 
   padding-left: 24px;
   padding-right: 24px;
@@ -1709,6 +1853,7 @@ td {
   background-image: none;
   border-radius: 20px;
   border: solid 2px #ffffff;
+  box-shadow: none;
 }
 
 .filter-button:hover,
@@ -1717,6 +1862,7 @@ td {
 
   background-image: none;
   background-color: #ffffff;
+  box-shadow: none;
 }
 
 .filter-button:active {
@@ -1729,10 +1875,11 @@ td {
 
 /*  -------Пагинация-------  */
 .pagination-list {
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 
-  width: 190px;
+  width: 167px;
   padding: 0;
   margin: 0;
   margin-left: auto;
@@ -1787,12 +1934,42 @@ td {
   background-color: #ffffff;
 }
 
-.pagination-item-prev a {
-  display: inline-block;
-  margin-right: 15px;
+.pagination-item-prev::before {
+  content: "";
+  pointer-events: none;
+  cursor: default;
 
-  font-size: 25px;
-  color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 10px;
+  left: -21px;
+
+  width: 7px;
+  height: 7px;
+
+  background-color: transparent;
+
+  transform: rotate(225deg);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pagination-item-next::before {
+  content: "";
+
+  position: absolute;
+  top: 10px;
+  right: 0;
+
+  width: 7px;
+  height: 7px;
+
+  background-color: transparent;
+
+  transform: rotate(45deg);
+
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
 }
 
 .pagination-item-next a {

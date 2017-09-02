@@ -21,7 +21,7 @@
                   <a href="#">Новинки</a>
                 </li>
                 <li class="catalog-submenu-item-current">
-                  <a href="catalog.html">Сливочное</a>
+                  <a href="#">Сливочное</a>
                 </li>
                 <li  class="catalog-submenu-item">
                   <a href="#">Щербеты</a>
@@ -45,9 +45,11 @@
               <section class="popup popup-search">
                 <h2 class="visually-hidden">Форма поиска</h2>
                 <form class="search-form" action="index.html" method="post">
-                  <label class="visually-hidden" for="search-field">Что искать?</label>
-                  <input class="search-field" id="search-field" type="search" name="search" value="" placeholder="Что ищем?">
-                  <input class="visually-hidden" type="submit" name="search" value="Искать">
+                  <div class="popup-container ">
+                    <input class="search-field popup-field" id="search-field" type="search" name="search" value="" placeholder="Что ищем?" required>
+                    <label class="popup-label" for="search-field">Что ищем?</label>
+                    <input class="visually-hidden" type="submit" name="search" value="Искать">
+                  </div>
                 </form>
               </section>
             </li>
@@ -59,10 +61,14 @@
               <section class="popup popup-login">
                 <h2 class="visually-hidden">Форма входа</h2>
                 <form class="login-form" action="index.html" method="post">
-                  <label class="visually-hidden" for="login-email">Электронная почта</label>
-                  <input class="login-email" id="login-email" type="email" name="login" placeholder="Электронная почта">
-                  <label class="visually-hidden" for="login-password">Пароль</label>
-                  <input class="login-password" id="login-password" type="password" name="password" placeholder="Пароль">
+                  <div class="popup-container">
+                    <input class="login-email popup-field" id="login-email" type="email" name="login" placeholder="Электронная почта" required>
+                    <label class="popup-label" for="login-email">Электронная почта</label>
+                  </div>
+                  <div class="popup-container">
+                    <input class="login-password popup-field" id="login-password" type="password" name="password" placeholder="Пароль" required>
+                    <label class="popup-label" for="login-password">Пароль</label>
+                  </div>
                   <button class="button login-button" type="submit">Войти</button>
                   <ul class="login-list">
                     <li class="login-item">
@@ -116,7 +122,7 @@
           <ul class="breadcrumbs">
             <li><a href="index.html">Главная</a></li>
             <li>&raquo;</li>
-            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="#">Каталог</a></li>
             <li>&raquo;</li>
             <li class="breadcrumbs-current">Сливочное</li>
           </ul>
@@ -332,13 +338,13 @@
 
         <div class="container">
           <ul class="pagination-list">
-            <li class="pagination-item-prev"><a href="#">&#8249;</a></li>
+            <li><a class="pagination-item-prev" href="#"></a></li>
             <li class="pagination-item pagination-item-current"><a>1</a></li>
             <li class="pagination-item"><a href="#">2</a></li>
             <li class="pagination-item"><a href="#">3</a></li>
             <li class="pagination-item"><a href="#">4</a></li>
             <li class="pagination-item"><a href="#">5</a></li>
-            <li class="pagination-item-next"><a href="#">&#8250;</a></li>
+            <li><a class="pagination-item-next" href="#"></a></li>
           </ul>
         </div>
       </main>
@@ -368,10 +374,19 @@
         <div class="footer-info">
           <h3 class="visually-hidden">Информация</h3>
           <ul class="footer-info-list">
-            <li class="footer-info-item"><a href="#">Для поставщиков</a></li>
-            <li class="footer-info-item"><a href="#">О производстве</a></li>
-            <li class="footer-info-item"><a href="#">Наши документы</a></li>
-            <li class="footer-info-item"><a href="#">Экологические продукты</a></li>
+            <li class="footer-info-item">
+              <a class="heart" href="#">Для поставщиков</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13"><path fill="#FFF" d="M10.799 0c-1.35 0-2.551.65-3.3 1.661A4.097 4.097 0 0 0 4.199 0C1.875 0 0 1.806 0 4.044 0 7.223 7.499 13 7.499 13s7.499-5.777 7.499-8.956C14.998 1.806 13.123 0 10.799 0z"/></svg>
+            </li>
+            <li class="footer-info-item">
+              <a href="#">О производстве</a>
+            </li>
+            <li class="footer-info-item">
+              <a href="#">Наши документы</a>
+            </li>
+            <li class="footer-info-item"
+            ><a href="#">Экологические стандарты</a>
+          </li>
           </ul>
         </div>
         <div class="footer-copyright">

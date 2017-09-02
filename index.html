@@ -53,9 +53,11 @@
               <section class="popup popup-search">
                 <h2 class="visually-hidden">Форма поиска</h2>
                 <form class="search-form" action="index.html" method="post">
-                  <label class="visually-hidden" for="search-field">Что искать?</label>
-                  <input class="search-field" id="search-field" type="search" name="search" value="" placeholder="Что ищем?">
-                  <input class="visually-hidden" type="submit" name="search" value="Искать">
+                  <div class="popup-container ">
+                    <input class="search-field popup-field" id="search-field" type="search" name="search" value="" placeholder="Что ищем?" required>
+                    <label class="popup-label" for="search-field">Что ищем?</label>
+                    <input class="visually-hidden" type="submit" name="search" value="Искать">
+                  </div>
                 </form>
               </section>
             </li>
@@ -67,10 +69,14 @@
               <section class="popup popup-login">
                 <h2 class="visually-hidden">Форма входа</h2>
                 <form class="login-form" action="index.html" method="post">
-                  <label class="visually-hidden" for="login-email">Электронная почта</label>
-                  <input class="login-email" id="login-email" type="email" name="login" placeholder="Электронная почта">
-                  <label class="visually-hidden" for="login-password">Пароль</label>
-                  <input class="login-password" id="login-password" type="password" name="password" placeholder="Пароль">
+                  <div class="popup-container">
+                    <input class="login-email popup-field" id="login-email" type="email" name="login" placeholder="Электронная почта" required>
+                    <label class="popup-label" for="login-email">Электронная почта</label>
+                  </div>
+                  <div class="popup-container">
+                    <input class="login-password popup-field" id="login-password" type="password" name="password" placeholder="Пароль" required>
+                    <label class="popup-label" for="login-password">Пароль</label>
+                  </div>
                   <button class="button login-button" type="submit">Войти</button>
                   <ul class="login-list">
                     <li class="login-item">
@@ -256,8 +262,10 @@
             <h2 class="visually-hidden">Подписка на рассылку</h2>
             <p class="subscription-info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и&nbsp;не слать всякой ненужной ерунды. Честно =)</p>
             <form class="subscription-form" action="index.html" method="post">
-              <label class="visually-hidden" for="subscription-email">Электронная почта</label>
-              <input class="subscription-email" id="subscription-email" type="email" name="email" placeholder="Электронная почта">
+              <div class="subscription-container">
+                <input class="subscription-email" id="subscription-email" type="email" name="email" placeholder="Электронная почта" required>
+                <label class="subscription-label" for="subscription-email">Электронная почта</label>
+              </div>
               <button class="button subscription-button" type="submit">Отправить</button>
             </form>
           </section>
@@ -314,10 +322,19 @@
         <div class="footer-info">
           <h3 class="visually-hidden">Информация</h3>
           <ul class="footer-info-list">
-            <li class="footer-info-item"><a href="#">Для поставщиков</a></li>
-            <li class="footer-info-item"><a href="#">О производстве</a></li>
-            <li class="footer-info-item"><a href="#">Наши документы</a></li>
-            <li class="footer-info-item"><a href="#">Экологические стандарты</a></li>
+            <li class="footer-info-item">
+              <a class="heart" href="#">Для поставщиков</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13"><path fill="#FFF" d="M10.799 0c-1.35 0-2.551.65-3.3 1.661A4.097 4.097 0 0 0 4.199 0C1.875 0 0 1.806 0 4.044 0 7.223 7.499 13 7.499 13s7.499-5.777 7.499-8.956C14.998 1.806 13.123 0 10.799 0z"/></svg>
+            </li>
+            <li class="footer-info-item">
+              <a href="#">О производстве</a>
+            </li>
+            <li class="footer-info-item">
+              <a href="#">Наши документы</a>
+            </li>
+            <li class="footer-info-item"
+            ><a href="#">Экологические стандарты</a>
+          </li>
           </ul>
         </div>
         <div class="footer-copyright">
@@ -330,22 +347,22 @@
     </div>
 
     <section class="modal modal-feedback">
-      <button class="modal-close" type="button">Закрыть</button>
+      <a class="modal-close" href="#"><span class="visually-hidden">Отменить</span></a>
       <h2 class="feedback-heading">Мы обязательно вам ответим!</h2>
       <form class="feedback-form" action="index.html" method="post">
-        <p>
+        <div class="feedback-container">
           <input class="feedback-field" id="feedback-name" type="text" name="name" placeholder="Как вас зовут?" required>
           <label class="feedback-label" for="feedback-name">Как вас зовут?</label>
-        </p>
-        <p>
+        </div>
+        <div class="feedback-container">
           <input class="feedback-field" id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?" required>
           <label class="feedback-label" for="feedback-email">Ваша почта для ответа?</label>
-        </p>
-        <p>
-          <textarea class="feedback-field" id="feedback-textarea-text" name="textarea-text" rows="8" cols="50" placeholder="Напишите что-нибудь..." required></textarea>
+        </div>
+        <div class="feedback-container">
+          <textarea class="feedback-field" id="feedback-textarea-text" name="textarea-text" rows="4" cols="50" placeholder="Напишите что-нибудь..." required></textarea>
           <label class="feedback-label" for="feedback-textarea-text">Напишите что-нибудь...</label>
-        </p>
-        <button class="button feedback-button" type="submit">Отправить</button>
+        </div>
+        <p><button class="button feedback-button" type="submit">Отправить</button></p>
       </form>
     </section>
   </div>
