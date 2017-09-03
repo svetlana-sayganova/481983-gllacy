@@ -150,6 +150,7 @@ a {
 
 .main-navigation {
   display: flex;
+  min-height: 64px;
 
   /* Временно для сетки */
   /*outline: 2px solid orange;*/
@@ -168,6 +169,7 @@ a {
 .site-navigation {
   display: flex;
   flex-wrap: wrap;
+  min-height: 50px;
 
   width: 408px;
   margin: 0;
@@ -287,6 +289,7 @@ a {
 .login-link:hover .popup-login,
 .login-link:focus .popup-login {
   display: block;
+  z-index: 10;
   top: 32px;
   right: 0;
 }
@@ -732,7 +735,7 @@ label[for="special-offer-2"] {
 .item:hover,
 .item:focus {
   margin-bottom: -41px;
-  z-index: 100;
+  z-index: 20;
 
   background-color: rgba(248, 247, 244, 0.2);
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
@@ -760,6 +763,7 @@ label[for="special-offer-2"] {
 }
 
 .item img {
+  cursor: pointer;
   border-radius: 50%;
 }
 
@@ -1413,8 +1417,6 @@ label[for="special-offer-2"] {
   color: #5b9ddf;
 }
 
-
-
 /*  Попапы -- форма входа  */
 .popup-login {
   display: none;
@@ -1724,6 +1726,7 @@ td {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  min-height: 42px;
 }
 
 .breadcrumbs {
@@ -1778,14 +1781,15 @@ td {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.13em;
+  margin-bottom: 34px;
 }
 
 .filter {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 40px;
-
+  align-content:space-between;
+  min-height: 131px;
   width: 860px;
 
   /* Временно для сетки */
@@ -1807,7 +1811,6 @@ td {
   line-height: 1.14em;
 }
 
-.filter-price-wrapper,
 .filter-fat-wrapper,
 .filter-filler-wrapper {
   padding: 9px 14px;
@@ -1819,8 +1822,11 @@ td {
 
 /*Сортировка*/
 .filter-select-wrapper {
+  position: relative;
   background-color: rgba(255, 255, 255, 0.2);
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
+
+  cursor: pointer;
 
   background-image: url("../img/svg/select-arrow.svg");
   background-repeat: no-repeat;
@@ -1830,13 +1836,11 @@ td {
 }
 
 .filter-select {
-  position: relative;
-  width: 120%;
-  z-index: 2;
+  cursor: pointer;
 
   width: 193px;
   box-sizing: border-box;
-  padding: 9px 14px;
+  padding: 9px 34px 9px 14px;
 
   font: inherit;
   font-size: 16px;
@@ -1844,19 +1848,25 @@ td {
   line-height: 1.13em;
   color: #ffffff;
 
-  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
   background: transparent;
+
   border: none;
+  border-radius: 20px;
+}
+
+.filter-select::-ms-expand { /*убираем стрелку с селекта в IE11 Источник: https://toster.ru/q/380623*/
+  display: none;
 }
 
 .filter-select-wrapper:hover,
 .filter-select-wrapper:focus {
+  cursor: pointer;
+
   color: #323232;
 
-  background-image: url("../img/svg/select-arrow-black.svg");
   background-color: #ffffff;
 }
 
@@ -1864,16 +1874,73 @@ td {
 .filter-select:focus {
   color: #323232;
 
+  background-image: url("../img/svg/select-arrow-black.svg");
+  background-repeat: no-repeat;
+  background-position: 168px 16px;
+  background-color: #ffffff;
+
   outline: none;
 }
 
 .filter-select option {
   font-weight: 500;
-  color: #323232;
 }
 
-.filter-price {
+/*Фильтр по цене*/
+.filter-range {
   width: 220px;
+  height: 36px;
+
+  background-image: none;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.range-controls {
+  position: relative;
+  width: 180px;
+  height: 36px;
+  padding-top: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.range-controls .scale {
+  height: 4px;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.range-controls .bar {
+  width: 118px;
+  height: 4px;
+  margin-left: 13px;
+
+  background: #ffffff;
+}
+
+.range-toggle {
+  position: absolute;
+	width: 20px;
+	height: 23px;
+	top: 8px;
+	background-image: url('../img/svg/filter-button.svg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.range-toggle-min {
+  left: 33px;
+}
+
+.range-toggle-max {
+  left: 131px;
+}
+
+.range-toggle:hover,
+.range-toggle:focus {
+	transform: scale(1.1);
+	cursor: pointer;
 }
 
 /*Фильтр по жирности*/
@@ -1898,7 +1965,7 @@ td {
   position: absolute;
   top: -2px;
   left: 0;
-  z-index: 100;
+  z-index: 5;
 
   width: 22px;
   height: 22px;
@@ -1915,7 +1982,7 @@ td {
   position: absolute;
   top: -2px;
   left: 0;
-  z-index: 100;
+  z-index: 5;
 
   width: 22px;
   height: 22px;
@@ -1971,7 +2038,7 @@ td {
   position: absolute;
   top: -1px;
   left: 0;
-  z-index: 100;
+  z-index: 5;
 
   width: 20px;
   height: 20px;
@@ -1988,7 +2055,7 @@ td {
   position: absolute;
   top: -1px;
   left: 0;
-  z-index: 100;
+  z-index: 5;
 
   width: 23px;
   height: 20px;
@@ -2019,16 +2086,6 @@ td {
   cursor: default;
   opacity: 0.4;
 }
-
-
-
-
-
-
-
-
-
-
 
 .filter-button {
   align-self: flex-end; /*иначе кнопкак вертикально тянется*/
