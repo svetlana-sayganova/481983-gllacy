@@ -60,11 +60,11 @@ body {
 
 .body-wrapper::before,
 .body-wrapper::after {
-  background-image: url(../img/special-offer-3.png);
+  background-image: url("../img/special-offer-3.png");
 }
 
 .body-wrapper::after {
-  background-image: url(../img/special-offer-2.png);
+  background-image: url("../img/special-offer-2.png");
 }
 
 a {
@@ -75,6 +75,7 @@ a {
 .button {
   display: inline-block;
   padding: 11px 22px;
+  vertical-align: top;
 
   font: inherit;
   color: #ffffff;
@@ -82,9 +83,9 @@ a {
   line-height: 1.222em;
   font-weight: 700;
   text-align: center;
-  vertical-align: middle;
   background-image: -webkit-linear-gradient( 90deg, rgb(202,56,36) 0%, rgb(242,104,67) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(202,56,36) 0%, rgb(242,104,67) 100%);
+  background-image: linear-gradient( 90deg, rgb(202,56,36) 0%, rgb(242,104,67) 100%);
   opacity: 0.988;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
           box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
@@ -95,14 +96,15 @@ a {
 .special-offer-button {
   display: inline-block;
   padding: 10px 43px;
+  vertical-align: top;
 
   font-size: 32px;
   line-height: 1.375em;
-  vertical-align: top;
   font-weight: 700;
   text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
   background-image: -webkit-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+  background-image: linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
           box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
   border-radius: 32px;
@@ -127,6 +129,7 @@ a {
 .button:active {
   background-image: -webkit-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
+  background-image: linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   -webkit-box-shadow: inset 0px 2px 2px 0px #942718;
           box-shadow: inset 0px 2px 2px 0px #942718;
 }
@@ -134,6 +137,7 @@ a {
 .special-offer-button:active {
   background-image: -webkit-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
+  background-image: linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   -webkit-box-shadow: inset 0px 2px 2px 0px #942718;
           box-shadow: inset 0px 2px 2px 0px #942718;
 }
@@ -145,8 +149,8 @@ a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   padding-top: 10px;
 
   /* Временно для сетки */
@@ -181,7 +185,6 @@ a {
       flex-wrap: wrap;
   min-height: 50px;
 
-  width: 408px;
   margin: 0;
   margin-top: 12px;
   padding: 0;
@@ -214,7 +217,7 @@ a {
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: flex-end;
+    justify-content: flex-end;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 
@@ -230,11 +233,7 @@ a {
   /*outline: 2px solid yellow;*/
 }
 
-.user-navigation-item > a { /*добавлен новый класс
-   .user-navigation-item, чтобы ссылка ОФОРМИТЬ ЗАКАЗ
-    в корзине сохранила стилизацию кнопки,
-    а также сохранилось особое оформление ссылок внутри поп-апа ВХОД.
-    Есть ли более компактный вариант?*/
+.user-navigation-item > a {
   display: block;
   margin-left: 10px;
   padding: 8px 0;
@@ -255,6 +254,7 @@ a {
   position: relative;
   height: 32px;
 }
+
 /*---Поиск---*/
 .search > a {
   width: 32px;
@@ -263,7 +263,6 @@ a {
   text-align: center;
 
   -webkit-box-sizing: border-box;
-
           box-sizing: border-box;
 }
 
@@ -279,6 +278,7 @@ a {
   top: 32px;
   right: 0;
 }
+
 /*---Вход---*/
 .login-link > a {
   position: relative;
@@ -310,6 +310,7 @@ a {
   top: 32px;
   right: 0;
 }
+
 /*---Корзина---*/
 .basket > a {
   position: relative;
@@ -317,7 +318,6 @@ a {
   padding-left: 44px;
 
   -webkit-box-sizing: border-box;
-
           box-sizing: border-box;
 }
 
@@ -567,7 +567,6 @@ a {
   margin-bottom: 30px;
   padding: 0;
 
-
   font-size: 60px;
   line-height: 1em;
   font-weight: 700;
@@ -584,11 +583,9 @@ a {
 
 .choice label {
   display: inline-block;
-
   width: 17px;
   height: 17px;
   margin-right: 8px;
-
   vertical-align: top;
 
   background-color: transparent;
@@ -627,8 +624,7 @@ input#special-offer-3:checked ~ .body-wrapper
 
 input#special-offer-1:checked ~ .body-wrapper label[for="special-offer-1"],
 input#special-offer-2:checked ~ .body-wrapper label[for="special-offer-2"],
-input#special-offer-3:checked ~ .body-wrapper
-label[for="special-offer-3"] {
+input#special-offer-3:checked ~ .body-wrapper label[for="special-offer-3"] {
   background-color: #ffffff;
 }
 
@@ -642,20 +638,17 @@ label[for="special-offer-3"] {
 
 /*Поведение переключателей слайдера*/
 input#special-offer-1:active ~ .body-wrapper label[for="special-offer-2"],
-input#special-offer-1:active ~ .body-wrapper
-label[for="special-offer-3"] {
+input#special-offer-1:active ~ .body-wrapper label[for="special-offer-3"] {
   background-color: transparent;
 }
 
 input#special-offer-2:active ~ .body-wrapper label[for="special-offer-1"],
-input#special-offer-2:active ~ .body-wrapper
-label[for="special-offer-3"] {
+input#special-offer-2:active ~ .body-wrapper label[for="special-offer-3"] {
   background-color: transparent;
 }
 
 input#special-offer-3:active ~ .body-wrapper label[for="special-offer-1"],
-input#special-offer-3:active ~ .body-wrapper
-label[for="special-offer-2"] {
+input#special-offer-3:active ~ .body-wrapper label[for="special-offer-2"] {
   background-color: transparent;
 }
 
@@ -666,7 +659,7 @@ label[for="special-offer-2"] {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+    justify-content: space-between;
   margin-bottom: 35px;
 
   /* Временно для сетки */
@@ -732,7 +725,7 @@ label[for="special-offer-2"] {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+    justify-content: space-between;
   width: 1172px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -750,7 +743,7 @@ label[for="special-offer-2"] {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+    justify-content: space-between;
   width: 1172px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -768,7 +761,6 @@ label[for="special-offer-2"] {
   height: 362px;
   padding: 0 13px;
   padding-top: 6px;
-  /*margin-bottom: 30px;*/
 
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -778,7 +770,6 @@ label[for="special-offer-2"] {
 .item:focus {
   margin-bottom: -43px;
   z-index: 20;
-
   width: 293px;
   height: 405px;
 
@@ -791,6 +782,7 @@ label[for="special-offer-2"] {
 .item:hover .item-button,
 .item:focus .item-button {
   display: inline-block;
+  vertical-align: top;
   position: absolute;
   z-index: 10;
 }
@@ -800,7 +792,6 @@ label[for="special-offer-2"] {
   position: absolute;
   left: 46px;
   top: 339px;
-
   padding-left: 18px;
   padding-right: 18px;
 }
@@ -811,7 +802,6 @@ label[for="special-offer-2"] {
   position: absolute;
   top: 6px;
   left: 13px;
-
   width: 61px;
   height: 61px;
 
@@ -877,7 +867,6 @@ label[for="special-offer-2"] {
   position: absolute;
   top: 0;
   left: 3px;
-
   width: 31px;
   height: 36px;
 
@@ -919,7 +908,7 @@ label[for="special-offer-2"] {
       flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+    justify-content: space-between;
   margin: 0;
   padding: 0;
 
@@ -931,7 +920,6 @@ label[for="special-offer-2"] {
   width: 485px;
   padding-left: 56px;
   padding-top: 12px;
-
   margin-top: 10px;
 }
 
@@ -941,7 +929,6 @@ label[for="special-offer-2"] {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 49px;
   height: 49px;
 
@@ -956,7 +943,6 @@ label[for="special-offer-2"] {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 49px;
   height: 49px;
 
@@ -971,7 +957,6 @@ label[for="special-offer-2"] {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 49px;
   height: 49px;
 
@@ -986,7 +971,6 @@ label[for="special-offer-2"] {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 49px;
   height: 49px;
 
@@ -1002,7 +986,7 @@ label[for="special-offer-2"] {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+    justify-content: space-between;
   margin-bottom: 40px;
 
   /* Временно для сетки */
@@ -1035,6 +1019,7 @@ label[for="special-offer-2"] {
 }
 
 .article-title {
+  width: 280px;
   margin: 0;
   padding-top: 5px;
 }
@@ -1084,15 +1069,16 @@ label[for="special-offer-2"] {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+     -ms-flex-pack: justify;
+    justify-content: space-between;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+     -ms-flex-align: start;
+        align-items: flex-start;
 }
 
-.subscription input { /*как стилизовать PLACEHOLDER?*/
+.subscription input {
   display: inline-block;
+  vertical-align: top;
   width: 366px;
   padding: 9px 14px;
   -webkit-box-sizing: border-box;
@@ -1113,7 +1099,6 @@ label[for="special-offer-2"] {
 .subscription input:hover {
   -webkit-box-shadow: 0 0 0 2px #9a9a9a;
           box-shadow: 0 0 0 2px #9a9a9a;
-  /*border: 2px solid #9a9a9a;*/
 }
 
 .subscription input:focus {
@@ -1137,7 +1122,6 @@ label[for="special-offer-2"] {
 .subscription-email:valid + .subscription-label {
   display: block;
   position: absolute;
-
   top: -16px;
   left: 13px;
 
@@ -1147,7 +1131,6 @@ label[for="special-offer-2"] {
 .subscription-email:focus + .subscription-label {
   display: block;
   position: absolute;
-
   top: -16px;
   left: 13px;
 
@@ -1186,12 +1169,13 @@ label[for="special-offer-2"] {
 /*  -------Расположение-------  */
 .location {
   width: 100%;
-  min-height: 430px;
+  height: 430px;
 
-  background-image: url("../img/map-pin.jpg"); /*вырезала карту вместе с пином и его тенью*/
+  background-image: url("../img/map-pin.jpg");
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #ebe5cc;
 }
 
 .container-location {
@@ -1202,6 +1186,12 @@ label[for="special-offer-2"] {
 
   /* Временно для сетки */
   /*outline: 2px solid blue;*/
+}
+
+iframe {
+  width: 100%;
+  height: 430px;
+  border: 0;
 }
 
 /*  -------Контакты-------  */
@@ -1215,6 +1205,7 @@ label[for="special-offer-2"] {
           box-sizing: border-box;
   padding-top: 29px;
   padding-left: 25px;
+
 
   font-size: 14px;
   line-height: 1.429em;
@@ -1243,7 +1234,6 @@ label[for="special-offer-2"] {
 }
 
 .contacts-button {
-  display: inline-block;
   position: absolute;
   bottom: 31px;
 
@@ -1280,7 +1270,7 @@ label[for="special-offer-2"] {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+    justify-content: space-between;
   width: 186px;
   margin: 0;
   padding: 0;
@@ -1290,9 +1280,9 @@ label[for="special-offer-2"] {
 
 .social-button {
   display: inline-block;
-
   width: 32px;
   height: 32px;
+  vertical-align: top;
 
   opacity: 0.8;
   background-color: transparent;
@@ -1332,8 +1322,8 @@ label[for="special-offer-2"] {
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+     -ms-flex-direction: column;
+         flex-direction: column;
   margin: 0;
   padding: 0;
   height: 45px;
@@ -1387,8 +1377,8 @@ label[for="special-offer-2"] {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+     -ms-flex-direction: column;
+         flex-direction: column;
   width: 190px;
   margin: 0;
   margin-left: auto;
@@ -1416,14 +1406,13 @@ label[for="special-offer-2"] {
   fill: #ffbc9e;
 }
 
-.footer-copyright a:not(.logo-html-academy):hover, /*вложенность селекторов = 2?*/
+.footer-copyright a:not(.logo-html-academy):hover,
 .footer-copyright a:not(.logo-html-academy):focus,
 .footer-copyright a:not(.logo-html-academy):active {
   color: #ffbc9e;
 
   border-bottom: 1px solid rgba(249, 172, 159, 0.3);
 }
-
 
 /*  -------Попапы-------  */
 .popup form,
@@ -1443,12 +1432,13 @@ label[for="special-offer-2"] {
   border-radius: 5px;
 }
 
-.popup input { /*как стилизовать PLACEHOLDER?*/
+.popup input {
   display: inline-block;
   width: 100%;
   padding: 9px 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  vertical-align: top;
 
   font: inherit;
   font-size: 14px;
@@ -1535,7 +1525,6 @@ label[for="special-offer-2"] {
 .popup-field:focus + .popup-label {
   display: block;
   position: absolute;
-
   top: -16px;
   left: 13px;
 
@@ -1562,11 +1551,9 @@ label[for="special-offer-2"] {
 }
 
 .login-button {
-  display: inline-block;
   position: absolute;
   top: 146px;
   left: 16px;
-
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -1607,10 +1594,10 @@ label[for="special-offer-2"] {
 .basket-container {
   position: relative;
   padding-top: 19px;
-  text-align: right;
-
   width: 539px;
   min-height: 242px;
+
+  text-align: right;
 
   line-height: 1.23em;
 }
@@ -1635,10 +1622,6 @@ label[for="special-offer-2"] {
 }
 
 .basket-button {
-  display: inline-block;
-  /*position: absolute;
-  right: 14px;*/
-
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -1655,7 +1638,7 @@ label[for="special-offer-2"] {
   min-height: 53px;
 }
 
-td {
+.cell {
   vertical-align: top;
   padding-top: 10px;
   text-align: center;
@@ -1663,7 +1646,6 @@ td {
 
 .column-1 {
   position: relative;
-
   width: 22px;
 }
 
@@ -1696,7 +1678,6 @@ td {
   position: absolute;
   top: 11px;
   left: 5px;
-
   width: 11px;
   height: 11px;
 
@@ -1713,12 +1694,12 @@ td {
 
 /*  -------Обратная связь-------  */
 .modal-feedback {
-  /*display: none;*/
-  display: block;
+  display: none;
+  /*display: block;*/
   padding: 16px 25px;
-
-  position: relative;
-
+  position: fixed;
+  top: 50%;
+  left: 50%;
   width: 478px;
   min-height: 443px;
   -webkit-box-sizing: border-box;
@@ -1731,6 +1712,23 @@ td {
   background-position: 0 0;
   background-repeat: repeat;
   border-radius: 10px;
+  transition: 0.5s;
+  transform: translate(-50%, -550%);
+}
+
+/*Затемнение при всплывании модального окна*/
+/*.modal-feedback-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}*/
+
+.feedback-move {
+  transform: translate(-50%, -50%);
 }
 
 .modal-feedback .modal-close::before {
@@ -1739,7 +1737,6 @@ td {
   position: absolute;
   top: 15px;
   right: 16px;
-
   width: 18px;
   height: 17px;
 
@@ -1764,13 +1761,14 @@ td {
   font-weight: 500;
 }
 
-.feedback-field { /*как стилизовать PLACEHOLDER?*/
+.feedback-field {
   display: inline-block;
   width: 265px;
   padding: 9px 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-bottom: 22px;
+  vertical-align: top;
 
   font: inherit;
   font-size: 16px;
@@ -1814,7 +1812,6 @@ td {
   resize: none;
   width: 100%;
   min-height: 153px;
-  /*margin-bottom: 25px;*/
 }
 
 .feedback-field:valid {
@@ -1848,7 +1845,6 @@ td {
 .feedback-field:valid + .feedback-label {
   display: block;
   position: absolute;
-
   top: -16px;
   left: 13px;
 
@@ -1858,7 +1854,6 @@ td {
 .feedback-field:focus + .feedback-label {
   display: block;
   position: absolute;
-
   top: -16px;
   left: 13px;
 
@@ -1868,29 +1863,27 @@ td {
 .modal-feedback p {
   margin: 0;
   padding: 0;
+
   text-align: right;
 }
 
 .feedback-button {
-  display: inline-block;
-
   padding-left: 24px;
   padding-right: 24px;
 }
 
 /*  -------Страница каталога-------  */
-
 /*  Хлебные крошки  */
 .breadcrumbs-contacts { /* обеъединено в один div с контактами и вынесено в HEADER */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+     -ms-flex-pack: justify;
+   justify-content: space-between;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+     -ms-flex-align: end;
+        align-items: flex-end;
   min-height: 42px;
 }
 
@@ -1902,6 +1895,7 @@ td {
   padding: 0;
 
   list-style: none;
+
   font-size: 14px;
   line-height: 1.385em;
   color: #ffffff;
@@ -1956,12 +1950,12 @@ td {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+     -ms-flex-pack: justify;
+   justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-line-pack:justify;
-      align-content:space-between;
+  -ms-flex-line-pack: justify;
+       align-content: space-between;
   min-height: 131px;
   width: 860px;
 
@@ -1997,7 +1991,6 @@ td {
 .filter-select-wrapper {
   position: relative;
   background-color: rgba(255, 255, 255, 0.2);
-  /*margin-bottom: 15px;*/
 
   cursor: pointer;
 
@@ -2008,12 +2001,12 @@ td {
 }
 
 .filter-select {
-  cursor: pointer;
-
   width: 193px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 9px 34px 9px 14px;
+
+  cursor: pointer;
 
   font: inherit;
   font-size: 16px;
@@ -2022,8 +2015,8 @@ td {
   color: #ffffff;
 
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background: transparent;
   border: none;
   border-radius: 20px;
@@ -2125,8 +2118,8 @@ td {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+     -ms-flex-pack: justify;
+   justify-content: space-between;
 }
 
 .filter-radio {
@@ -2195,8 +2188,8 @@ td {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+     -ms-flex-pack: justify;
+   justify-content: space-between;
   padding: 9px 20px 9px 16px;
 }
 
@@ -2258,7 +2251,7 @@ td {
 
 .filter-button {
   -ms-flex-item-align: end;
-      align-self: flex-end; /*иначе кнопкак вертикально тянется*/
+           align-self: flex-end; /*иначе кнопкак вертикально тянется*/
   padding: 7px 27px;
 
   color: #ffffff;
@@ -2302,8 +2295,8 @@ td {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+     -ms-flex-pack: start;
+   justify-content: flex-start;
   width: 167px;
   padding: 0;
   margin: 0;
@@ -2324,13 +2317,13 @@ td {
           box-sizing: border-box;
   padding-top: 4px;
   margin-right: 2px;
+  vertical-align: bottom;
 
   font-size: 16px;
   font-weight: 500;
   line-height: 1.13em;
   color: #ffffff;
   text-align: center;
-  vertical-align: bottom;
 
   border-radius: 50%;
 }
@@ -2394,14 +2387,6 @@ td {
           transform: rotate(45deg);
   border-top: 1px solid #ffffff;
   border-right: 1px solid #ffffff;
-}
-
-.pagination-item-next a {
-  display: inline-block;
-  margin-left: 20px;
-
-  font-size: 25px;
-  color: #ffffff;
 }
 
 .visually-hidden {
