@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <title>Магазин мороженого &laquo;Глейси&raquo;</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
 
@@ -99,7 +99,7 @@
                     <table class="basket-table">
                       <tr class="basket-table-item">
                         <td class="column-1 cell">
-                          <a class="modal-close" href="#"><span class="visually-hidden">Отменить</span></a>
+                          <a class="popup-close" href="#"><span class="visually-hidden">Отменить</span></a>
                         </td>
                         <td class="column-2 cell">
                           <img src="img/creamy-orange-little.jpg" width="33" height="33" alt="Пломбир с апельсиновым джемом">
@@ -110,7 +110,7 @@
                       </tr>
                       <tr class="basket-table-item">
                         <td class="column-1 cell">
-                          <a class="modal-close" href="#"><span class="visually-hidden">Отменить</span></a>
+                          <a class="popup-close" href="#"><span class="visually-hidden">Отменить</span></a>
                         </td>
                         <td class="column-2 cell">
                           <img src="img/creamy-straw-little.jpg" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада">
@@ -344,19 +344,19 @@
       </div>
 
       <section class="modal modal-feedback-wrapper">
-        <div class="modal-feedback feedback-move">
+        <div class="modal-feedback">
           <h2 class="feedback-heading">Мы обязательно вам ответим!</h2>
-          <form class="feedback-form" action="index.html" method="post">
+          <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
             <div class="feedback-container">
-              <input class="feedback-field" id="feedback-name" type="text" name="name" placeholder="Как вас зовут?" required>
+              <input class="feedback-field" id="feedback-name" type="text" name="feedback-name" placeholder="Как вас зовут?">
               <label class="feedback-label" for="feedback-name">Как вас зовут?</label>
             </div>
             <div class="feedback-container">
-              <input class="feedback-field" id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?" required>
+              <input class="feedback-field" id="feedback-email" type="email" name="feedback-email" placeholder="Ваша почта для ответа?">
               <label class="feedback-label" for="feedback-email">Ваша почта для ответа?</label>
             </div>
             <div class="feedback-container">
-              <textarea class="feedback-field" id="feedback-textarea-text" name="textarea-text" rows="4" cols="50" placeholder="Напишите что-нибудь..." required></textarea>
+              <textarea class="feedback-field" id="feedback-textarea-text" name="textarea-text" rows="4" cols="50" placeholder="Напишите что-нибудь..."></textarea>
               <label class="feedback-label" for="feedback-textarea-text">Напишите что-нибудь...</label>
             </div>
             <p><button class="button feedback-button" type="submit">Отправить</button></p>
@@ -365,5 +365,6 @@
         </div>
       </section>
     </div>
+    <script src="js/feedback.min.js"></script>
   </body>
 </html>

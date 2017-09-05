@@ -71,6 +71,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /*  -------Кнопки-------  */
 .button {
   display: inline-block;
@@ -396,6 +401,7 @@ a {
 .site-navigation-catalog:hover .catalog-submenu,
 .site-navigation-catalog:focus .catalog-submenu {
   display: block;
+  z-index: 10;
 }
 
 .catalog-submenu a {
@@ -693,6 +699,7 @@ input#special-offer-3:active ~ .body-wrapper label[for="special-offer-2"] {
   margin: 0;
   margin-left: 19px;
   margin-top: 16px;
+  margin-bottom: 80px;
 
   font-size: 18px;
   line-height: 22px;
@@ -877,10 +884,11 @@ input#special-offer-3:active ~ .body-wrapper label[for="special-offer-2"] {
 
 /*  -------Особенности-------  */
 .features {
-  min-height: 306px;
+  min-height: 290px;
   margin-bottom: 40px;
   padding-left: 19px;
   padding-right: 19px;
+  padding-bottom: 16px;
 
   color: #323232;
 
@@ -1672,7 +1680,7 @@ iframe {
   width: 82px;
 }
 
-.basket-table .modal-close::before {
+.basket-table .popup-close::before {
   content: "";
 
   position: absolute;
@@ -1686,18 +1694,74 @@ iframe {
   background-position: 0 0;
 }
 
-.basket-table .modal-close:focus::before {
+.basket-table .popup-close:focus::before {
   border-color: #663d15;
   outline: thin dotted;
   outline: 2px auto -webkit-focus-ring-color;
 }
 
 /*  -------Обратная связь-------  */
+@keyframes bounce {
+  0% {
+    -webkit-transform: translate(-50%, -550%);
+        -ms-transform: translate(-50%, -550%);
+            transform: translate(-50%, -550%);
+  }
+
+  70% {
+    -webkit-transform: translate(-50%, -40%);
+        -ms-transform: translate(-50%, -40%);
+            transform: translate(-50%, -40%);
+  }
+
+  90% {
+    -webkit-transform: translate(-50%, -55%);
+        -ms-transform: translate(-50%, -55%);
+            transform: translate(-50%, -55%);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate(-55%, -50%);
+        -ms-transform: translate(-55%, -50%);
+            transform: translate(-55%, -50%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate(-45%, -50%);
+        -ms-transform: translate(-45%, -50%);
+            transform: translate(-45%, -50%);
+  }
+}
+
 .modal-feedback {
   display: none;
-  /*display: block;*/
   padding: 16px 25px;
   position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   width: 478px;
@@ -1712,23 +1776,36 @@ iframe {
   background-position: 0 0;
   background-repeat: repeat;
   border-radius: 10px;
-  transition: 0.5s;
-  transform: translate(-50%, -550%);
 }
 
 /*Затемнение при всплывании модального окна*/
-/*.modal-feedback-wrapper {
+.modal-feedback-wrapper {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: 50;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
-}*/
+}
 
-.feedback-move {
-  transform: translate(-50%, -50%);
+.modal-show-wrapper {
+  display: block;
+}
+
+.modal-show {
+  display: block;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation: bounce 0.6s;
+          animation: bounce 0.6s;
+}
+
+.modal-error {
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
 }
 
 .modal-feedback .modal-close::before {
@@ -1842,7 +1919,7 @@ iframe {
   line-height: 1.181;
 }
 
-.feedback-field:valid + .feedback-label {
+.feedback-field:not(:placeholder-shown) + .feedback-label {
   display: block;
   position: absolute;
   top: -16px;
