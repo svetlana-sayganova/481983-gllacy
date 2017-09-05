@@ -90,7 +90,6 @@ img {
   text-align: center;
   background-image: -webkit-linear-gradient( 90deg, rgb(202,56,36) 0%, rgb(242,104,67) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(202,56,36) 0%, rgb(242,104,67) 100%);
-  background-image: linear-gradient( 90deg, rgb(202,56,36) 0%, rgb(242,104,67) 100%);
   opacity: 0.988;
   -webkit-box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
           box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
@@ -109,7 +108,6 @@ img {
   text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
   background-image: -webkit-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  background-image: linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
   -webkit-box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
           box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
   border-radius: 32px;
@@ -134,7 +132,6 @@ img {
 .button:active {
   background-image: -webkit-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
-  background-image: linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   -webkit-box-shadow: inset 0px 2px 2px 0px #942718;
           box-shadow: inset 0px 2px 2px 0px #942718;
 }
@@ -142,7 +139,6 @@ img {
 .special-offer-button:active {
   background-image: -webkit-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   background-image: -ms-linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
-  background-image: linear-gradient( 90deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
   -webkit-box-shadow: inset 0px 2px 2px 0px #942718;
           box-shadow: inset 0px 2px 2px 0px #942718;
 }
