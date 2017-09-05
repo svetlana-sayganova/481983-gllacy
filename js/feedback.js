@@ -5,16 +5,19 @@ var form = modal.querySelector("form");
 var close = document.querySelector(".modal-close");
 var login = modal.querySelector("[name = feedback-name]");
 var mail = modal.querySelector("[name = feedback-email");
-var storage = localStorage.getItem("feedback-name");
+var text = modal.querySelector("[name = textarea-text");
+var storageLogin = localStorage.getItem("feedback-name");
+var storageMail = localStorage.getItem("feedback-email");
 
 
 button.addEventListener("click", function(evt) {
   evt.preventDefault();
   modal.classList.add("modal-show");
   wrapper.classList.add("modal-show-wrapper");
-  if (storage) {
-    login.value = storage;
-    mail.focus();
+  if (storageLogin && storageMail) {
+    login.value = storageLogin;
+    mail.value = storageMail;
+    text.focus();
   } else {
     login.focus();
   }
@@ -33,6 +36,7 @@ form.addEventListener("submit", function(evt) {
     modal.classList.add("modal-error");
   } else {
     localStorage.setItem("feedback-name", login.value);
+    localStorage.setItem("feedback-email", mail.value);
   }
 });
 
