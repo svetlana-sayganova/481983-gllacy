@@ -5,7 +5,7 @@ var form = modal.querySelector("form");
 var close = document.querySelector(".modal-close");
 var login = modal.querySelector("[name = feedback-name]");
 var mail = modal.querySelector("[name = feedback-email");
-var text = modal.querySelector("[name = textarea-text");
+var text = modal.querySelector("[name = textarea-text]");
 var storageLogin = localStorage.getItem("feedback-name");
 var storageMail = localStorage.getItem("feedback-email");
 
