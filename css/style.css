@@ -1736,18 +1736,18 @@ iframe {
   50%,
   70%,
   90% {
-    -webkit-transform: translate(-55%, -50%);
-        -ms-transform: translate(-55%, -50%);
-            transform: translate(-55%, -50%);
+    -webkit-transform: translate(-51%, -50%);
+        -ms-transform: translate(-51%, -50%);
+            transform: translate(-51%, -50%);
   }
 
   20%,
   40%,
   60%,
   80% {
-    -webkit-transform: translate(-45%, -50%);
-        -ms-transform: translate(-45%, -50%);
-            transform: translate(-45%, -50%);
+    -webkit-transform: translate(-49%, -50%);
+        -ms-transform: translate(-49%, -50%);
+            transform: translate(-49%, -50%);
   }
 }
 

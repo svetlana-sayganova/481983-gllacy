@@ -27,12 +27,18 @@ close.addEventListener("click", function(evt) {
   evt.preventDefault();
   modal.classList.remove("modal-show");
   wrapper.classList.remove("modal-show-wrapper");
-  modal.classList.remove("modal-error");
+  if (modal.classList.contains("modal-error")) {
+    modal.classList.remove("modal-error");
+  }
 });
 
 form.addEventListener("submit", function(evt) {
   if (!login.value || !mail.value) {
     evt.preventDefault();
+    if (modal.classList.contains("modal-error")) {
+      modal.classList.remove("modal-error");
+    }
+    modal.offsetWidth;
     modal.classList.add("modal-error");
   } else {
     localStorage.setItem("feedback-name", login.value);
@@ -47,6 +53,9 @@ window.addEventListener("keydown", function(evt) {
     }
     if (wrapper.classList.contains("modal-show-wrapper")) {
       wrapper.classList.remove("modal-show-wrapper");
+    }
+    if (modal.classList.contains("modal-error")) {
+      modal.classList.remove("modal-error");
     }
   }
 });
