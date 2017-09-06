@@ -1,23 +1,23 @@
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/roboto.woff"),
-       url("../fonts/roboto.woff2");
+  src: url("../fonts/roboto.woff2"),
+       url("../fonts/roboto.woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/robotomedium.woff"),
-       url("../fonts/robotomedium.woff2");
+  src: url("../fonts/robotomedium.woff2"),
+       url("../fonts/robotomedium.woff");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/robotobold.woff"),
-       url("../fonts/robotobold.woff2");
+  src: url("../fonts/robotobold.woff2"),
+       url("../fonts/robotobold.woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -684,6 +684,7 @@ input#special-offer-3:active ~ .body-wrapper label[for="special-offer-2"] {
           box-sizing: border-box;
 
   border-radius: 15px;
+  /*background-size: cover;*/
 }
 
 .present-heading {
@@ -708,14 +709,14 @@ input#special-offer-3:active ~ .body-wrapper label[for="special-offer-2"] {
 .present-rasp {
   background-color: #5e0f1f;
   background-image: url("../img/bg-raspberry.jpg");
-  background-position: 0 0;
+  background-position: -49px -94px;
   background-repeat: no-repeat;
 }
 
 .present-chocolate {
   background-color: #3e2519;
   background-image: url("../img/bg-chocolate.jpg");
-  background-position: 0 0;
+  background-position: -218px -39px;
   background-repeat: no-repeat;
 }
 
@@ -1014,7 +1015,7 @@ input#special-offer-3:active ~ .body-wrapper label[for="special-offer-2"] {
 
   background-color: #ffffff;
   background-image: url("../img/strawberry-background.jpg");
-  background-position: 0 0;
+  background-position: -52px -224px;
   background-repeat: no-repeat;
   border-radius: 15px;
 }
@@ -1049,26 +1050,35 @@ input#special-offer-3:active ~ .body-wrapper label[for="special-offer-2"] {
 
 /*  -------Подписка-------  */
 .subscription {
-  position: relative;
   width: 560px;
   min-height: 220px;
-  padding-left: 26px;
-  padding-right: 26px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 
-  background-color: #f8f7f4;
   background-image: url("../img/bg-subscription.png");
   background-position: 0 0;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   border-radius: 15px;
+}
+
+.subscription-wrapper {
+  position: relative;
+  min-height: 210px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-bottom: 30px;
+  background-color: #f8f7f4;
+  border-radius: 15px;
+  margin: 5px;
 }
 
 .subscription p {
   margin: 0;
   margin-bottom: 37px;
   padding: 0;
-  padding-top: 35px;
+  padding-top: 30px;
 
   color: #5a5a5a;
 }
@@ -1267,7 +1277,7 @@ iframe {
 .footer-social {
   width: 186px;
   margin-top: 17px;
-  margin-right: 207px;
+  margin-right: 235px;
 
   /* Временно для сетки */
   /*outline: 2px solid #afad1b;*/
@@ -1277,6 +1287,8 @@ iframe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
     justify-content: space-between;
@@ -1331,8 +1343,8 @@ iframe {
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-     -ms-flex-direction: column;
-         flex-direction: column;
+     /*-ms-flex-direction: column;
+         flex-direction: column;*/
   margin: 0;
   padding: 0;
   height: 45px;
@@ -1345,13 +1357,14 @@ iframe {
 
 .footer-info-item {
   display: block;
-  margin-left: 28px;
+  /*margin-left: 28px;*/
+  min-width: 142px;
 }
 
 .footer-info-list svg {
   position: absolute;
   top: 6px;
-  left: 6px;
+  left: -24px;
 }
 
 .footer-info a {
