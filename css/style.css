@@ -522,6 +522,7 @@ img {
 }
 
 /*  Нахождение на текущей странице  */
+.site-navigation-catalog:hover .site-navigation-current,
 .site-navigation-current,
 .site-navigation-current:hover,
 .site-navigation-current:focus,
