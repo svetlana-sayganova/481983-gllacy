@@ -480,6 +480,7 @@ img {
 }
 
 /*  Поведение ссылок при наведении курсора и нажатии  */
+.site-navigation-catalog:hover .site-navigation-link,
 .site-navigation-link:hover,
 .site-navigation-link:focus {
   padding: 8px 14px;
