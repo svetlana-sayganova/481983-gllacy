@@ -271,6 +271,8 @@ img {
           box-sizing: border-box;
 }
 
+.popup-search:hover + a path,
+.popup-search:focus + a path,
 .search > a:hover path,
 .search > a:focus path,
 .search > a:active path {
@@ -302,6 +304,8 @@ img {
   fill: #ffffff;
 }
 
+.popup-login:hover + a path,
+.popup-login:focus + a path,
 .login-link > a:hover path,
 .login-link > a:focus path,
 .login-link > a:active path  {
@@ -493,6 +497,12 @@ img {
   border-radius: 16px;
 }
 
+.popup-search:hover + a,
+.popup-search:focus + a,
+.popup-login:hover + a,
+.popup-login:focus + a,
+.popup-basket:hover + a,
+.popup-basket:focus + a,
 .user-navigation-item > a:hover,
 .user-navigation-item > a:focus {
   color: #333333;
