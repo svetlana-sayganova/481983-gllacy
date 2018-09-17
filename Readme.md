@@ -14,7 +14,7 @@
 ### Страница каталога
 
 - При наведении на корзину в шапке страницы появляется форма с товарами.
-- Фильтр: при нажатии кна нопку «Применить» осуществляется отправка формы.
+- Фильтр: при нажатии на кнопку «Применить» осуществляется отправка формы.
 ---
 
 <a href="https://htmlacademy.ru/intensive/htmlcss"><img align="left" width="50" height="50" alt="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/htmlcss/logo-for-github.svg"></a>
